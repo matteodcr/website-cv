@@ -29,5 +29,5 @@ jobs:
           ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
       - name: copy builds to server
         run: |
-          ssh ${{ USER_IP}} "rm -rf /usr/share/caddy/*"
-          scp -r ./build/* ${{ USER_IP }}:/usr/share/caddy
+          ssh ${{ secrets.USER_IP}} "rm -rf /usr/share/caddy/*"
+          scp -r ./build/* ${{ secrets.USER_IP }}:/usr/share/caddy
