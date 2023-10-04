@@ -4,27 +4,30 @@ on:
   push:
     branches:
       - main
-
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
 jobs:
-  build-and-deploy:
+  production:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+      - name: Install dependencies 👨🏻‍💻
+        run: npm i
+      - name: Build for production 🏗️
         run: npm run build
-
-      - name: Deploy
+      - name: Setup SSH
         run: |
-          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /usr/share/caddy/*"
-          scp -r ./build/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/usr/share/caddy
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIV_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PUB_KEY }}" > ~/.ssh/id_rsa.pub
+          chmod 600 ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa.pub
+          ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
+      - name: copy builds to server
+        run: |
+          ssh ${{ USER_IP}} "rm -rf /usr/share/caddy/*"
+          scp -r ./build/* ${{ USER_IP }}:/usr/share/caddy
