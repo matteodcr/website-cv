@@ -5,7 +5,7 @@ import React from "react";
 const Contact = () => {
     const markdownContent = `
 ## Contact
-- [LinkedIn](www.linkedin.com/in/matteodecorsaire)
+- [LinkedIn](https://linkedin.com/in/matteodecorsaire)
 - [GitHub](https://github.com/matteodcr)
 `;
 
