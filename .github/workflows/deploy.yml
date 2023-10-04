@@ -3,12 +3,10 @@ name: Deploy
 on:
   push:
     branches:
-      - main
-      - master
+      - release
   pull_request:
     branches:
-      - main
-      - master
+      - release
 
 jobs:
   production:
@@ -36,29 +34,3 @@ jobs:
         run: |
           ssh ${{ secrets.USER_IP}} "rm -rf /usr/share/caddy/*"
           scp -r ./build/* ${{ secrets.USER_IP }}:/usr/share/caddy
-
-      - name: Get version from package.json 📦
-        id: package_version
-        run: |
-          echo "::set-output name=version::$(node -p "require('./package.json').version")"
-
-      - name: Compress build folder 🗜️
-        run: |
-          zip -r cv-${{ steps.package_version.outputs.version }}.zip ./build/
-
-      - name: Get Release by Tag
-        id: get_release_by_tag
-        uses: InsonusK/get-latest-release@v1.0.1
-        with:
-          myToken: ${{ secrets.TOKEN }}
-          viewTop: 1
-
-      - name: Upload Release Asset 📦
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release_by_tag.outputs.uploadUrl }}
-          asset_path: ./cv-${{ steps.package_version.outputs.version }}.zip
-          asset_name: cv-${{ steps.package_version.outputs.version }}.zip
-          asset_content_type: application/zip
