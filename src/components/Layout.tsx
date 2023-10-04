@@ -14,6 +14,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import {useTheme} from "@mui/material/styles";
 import ColorModeContext from "../ColorContext";
+import MaterialSwitch from "./MaterialSwitch"
 
 const pages = [
     {text: 'Accueil', href: '/'},
@@ -159,9 +160,12 @@ function ResponsiveAppBar() {
                     </Box>
 
                     <Box sx={{flexGrow: 0}}>
-                        <IconButton sx={{ml: 1}} onClick={colorMode.toggleColorMode} color="inherit">
-                            {theme.palette.mode === 'dark' ? <Brightness7Icon/> : <Brightness4Icon/>}
-                        </IconButton>
+                        <MaterialSwitch
+                            checked={theme.palette.mode === 'dark'}
+                            onChange={colorMode.toggleColorMode}
+                            name="colorModeSwitch"
+                            color="default"
+                        />
                     </Box>
                 </Toolbar>
             </Container>
