@@ -9,16 +9,20 @@ on:
     branches:
       - main
       - master
+
 jobs:
   production:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
+
       - name: Install dependencies 👨🏻‍💻
         run: npm i
+
       - name: Build for production 🏗️
         run: npm run build
+
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh/
@@ -27,7 +31,34 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa.pub
           ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
+
       - name: copy builds to server
         run: |
           ssh ${{ secrets.USER_IP}} "rm -rf /usr/share/caddy/*"
           scp -r ./build/* ${{ secrets.USER_IP }}:/usr/share/caddy
+
+      - name: Get version from package.json 📦
+        id: package_version
+        run: |
+          echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+      - name: Compress build folder 🗜️
+        run: |
+          zip -r cv-${{ steps.package_version.outputs.version }}.zip ./build/
+
+      - name: Get Release by Tag
+        id: get_release_by_tag
+        uses: InsonusK/get-latest-release@v1.0.1
+        with:
+          myToken: ${{ secrets.TOKEN }}
+          viewTop: 1
+
+      - name: Upload Release Asset 📦
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          upload_url: ${{ steps.get_release_by_tag.outputs.uploadUrl }}
+          asset_path: ./cv-${{ steps.package_version.outputs.version }}.zip
+          asset_name: cv-${{ steps.package_version.outputs.version }}.zip
+          asset_content_type: application/zip
