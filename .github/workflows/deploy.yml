@@ -26,6 +26,5 @@ jobs:
 
       - name: Deploy
         run: |
-          ssh-keyscan ${{ secrets.HOST }} >> ~/.ssh/known_hosts
           ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /usr/share/caddy/*"
           scp -r ./build/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/usr/share/caddy
