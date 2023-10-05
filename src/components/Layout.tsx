@@ -18,6 +18,7 @@ import MaterialSwitch from "./MaterialSwitch"
 
 const pages = [
     {text: 'Accueil', href: '/'},
+    {text: 'Projets', href: '/projects'},
     {text: 'Contact', href: '/contact'}
 ]
 

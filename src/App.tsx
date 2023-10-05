@@ -10,6 +10,7 @@ import {ThemeProvider, createTheme} from '@mui/material/styles';
 import ColorModeContext from "./ColorContext";
 import {Box, CssBaseline} from "@mui/material";
 import Footer from "./components/Footer";
+import Projects from "./pages/Projects";
 
 export default function App() {
 
@@ -67,6 +68,7 @@ export default function App() {
                         >
                             <Routes>
                                 <Route index element={<Home/>}/>
+                                <Route path="projects" element={<Projects/>}/>
                                 <Route path="contact" element={<Contact/>}/>
                                 <Route path="*" element={<NoPage/>}/>
                             </Routes>
