@@ -16,14 +16,14 @@ jobs:
         uses: actions/checkout@master
 
       - name: 📦 Install Dependencies
-        run: npm i
+        run: yarn install
 
       - name: 🏗️ Build for Production
-        run: npm run build
+        run: yarn build
 
       - name: ▶️ Run Jest Tests
-        run: npm test
-        
+        run: yarn test
+
       - name: 🗝️ Setup SSH Keys
         run: |
           mkdir -p ~/.ssh/
@@ -36,4 +36,4 @@ jobs:
       - name: 🚀 Copy Builds to Server
         run: |
           ssh ${{ secrets.USER_IP }} "rm -rf /usr/share/caddy/*"
-          scp -r ./build/* ${{ secrets.USER_IP }}:/usr/share/caddy
+          scp -r ./dist/* ${{ secrets.USER_IP }}:/usr/share/caddy

@@ -2,6 +2,7 @@ import React from 'react';
 import {Grid, Card, CardContent, Typography, CardActionArea, CardMedia} from '@mui/material';
 import {styled} from '@mui/system';
 import {Link} from "react-router-dom";
+import {useTheme} from "@mui/material/styles";
 
 export interface Project {
     title: string;
@@ -36,10 +37,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
         },
     }));
 
+    const theme = useTheme()
+
     return (
         <Grid item xs={12} marginTop={2} marginBottom={0}>
             <StyledCard>
-                <Link to={`/projects/${project.title.toLowerCase()}`} style={{textDecoration: 'none'}}>
+                <Link to={`/projects/${project.title.toLowerCase()}`}
+                      style={{textDecoration: 'none', color: theme.palette.text.primary}}>
                     <CardActionArea onClick={() => console.log(`Vous avez cliqué sur ${project.title}`)}>
                         <StyledCardMedia
                             image={project.image_url}
