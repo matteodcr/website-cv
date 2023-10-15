@@ -15,11 +15,16 @@
     "@types/node": "^16.18.54",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
+    "@uiw/react-markdown-preview": "^4.1.16",
+    "color-thief-react": "^2.1.0",
     "framer-motion": "^10.16.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "prism-react-renderer": "^2.1.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
-    "react-markdown": "^9.0.0",
+    "react-markdown": "^6.0.0",
+    "react-native-image-colors": "^2.3.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "^5.0.1",
     "react-syntax-highlighter": "^15.5.0",
@@ -31,7 +36,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "eject": "react-scripts eject",
     "release": "release-it"
   },
@@ -59,7 +65,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "release-it": "^16.2.1"
+    "release-it": "^16.2.1",
+    "ts-jest": "^29.1.1"
   },
   "release-it": {
     "github": {

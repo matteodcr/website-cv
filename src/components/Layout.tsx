@@ -10,8 +10,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import {Link} from 'react-router-dom';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 import {useTheme} from "@mui/material/styles";
 import ColorModeContext from "../ColorContext";
 import MaterialSwitch from "./MaterialSwitch"
@@ -54,7 +52,7 @@ function ResponsiveAppBar() {
                         <Typography
                             variant="h6"
                             noWrap
-                            component="a"
+                            component="span"
                             sx={{
                                 display: {xs: 'none', md: 'flex'},
                                 fontFamily: 'monospace',
@@ -70,7 +68,7 @@ function ResponsiveAppBar() {
                         <Typography
                             variant="h6"
                             noWrap
-                            component="a"
+                            component="span"
                             sx={{
                                 display: {xs: 'none', md: 'flex'},
                                 fontFamily: 'monospace',
@@ -118,11 +116,12 @@ function ResponsiveAppBar() {
                         >
                             {pages.map((page) => (
                                 <Link to={page.href} key={page.text} style={{textDecoration: 'none'}}>
+
                                     <MenuItem key={page.text} onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center">{page.text}</Typography>
+
                                     </MenuItem>
                                 </Link>
-
                             ))}
                         </Menu>
                     </Box>

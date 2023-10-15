@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="theme-color" content="#000000"/>
+    <link href="%PUBLIC_URL%/favicon.ico" rel="icon"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="#000000" name="theme-color"/>
     <meta
-            name="description"
             content="Matteo Decorsaire personal website"
+            name="description"
     />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+    <link href="%PUBLIC_URL%/manifest.json" rel="manifest"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,6 +24,27 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Mattéo Decorsaire</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #root {
+            display: flex;
+            flex-direction: column;
+        }
+
+        body, #root {
+            min-height: 100vh;
+        }
+
+        #root > footer {
+            width: 100%;
+            align-self: end;
+        }
+    </style>
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>

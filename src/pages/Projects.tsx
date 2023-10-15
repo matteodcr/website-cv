@@ -1,27 +1,24 @@
 import React from 'react';
-import {Grid, Card, CardContent, Typography, CardActionArea, Button, CardMedia} from '@mui/material';
+import {Grid, Card, CardContent, Typography, CardActionArea, CardMedia} from '@mui/material';
 import {styled} from '@mui/system';
+import {Link} from "react-router-dom";
 
-interface Project {
+export interface Project {
     title: string;
     description: string;
+    color: string;
+    image_url: string;
+    content: () => React.ReactNode;
 }
-
-const projects: Project[] = [
-    {title: 'Projet 1', description: 'Description du projet 1'},
-    {title: 'Projet 2', description: 'Description du projet 2'},
-    // Ajoutez plus de projets ici
-];
 
 interface ProjectCardProps {
     project: Project;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
-    const cardColor = `hsl(${Math.random() * 360}, 100%, 95%)`;
 
     const StyledCard = styled(Card)(({theme}) => ({
-        backgroundColor: cardColor,
+        backgroundColor: project.color,
     }));
 
     const StyledCardMedia = styled(CardMedia)(({theme}) => ({
@@ -34,36 +31,43 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
             right: 0,
             bottom: 0,
             left: 0,
-            background: `linear-gradient(180deg, rgba(255,255,255,0) 0%, ${cardColor} 100%)`,
+            background: `linear-gradient(180deg, rgba(255,255,255,0) 0%, ${project.color} 100%)`,
             zIndex: 2,
         },
     }));
 
     return (
-        <Grid item xs={12}>
+        <Grid item xs={12} marginTop={2} marginBottom={0}>
             <StyledCard>
-                <CardActionArea onClick={() => console.log(`Vous avez cliqué sur ${project.title}`)}>
-                    <StyledCardMedia
-                        image="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                    />
-                    <CardContent>
-                        <Typography variant="h5" component="div">
-                            {project.title}
-                        </Typography>
-                        <Typography variant="body2">
-                            {project.description}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
+                <Link to={`/projects/${project.title.toLowerCase()}`} style={{textDecoration: 'none'}}>
+                    <CardActionArea onClick={() => console.log(`Vous avez cliqué sur ${project.title}`)}>
+                        <StyledCardMedia
+                            image={project.image_url}
+                        />
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                {project.title}
+                            </Typography>
+                            <Typography variant="body2">
+                                {project.description}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Link>
+
             </StyledCard>
         </Grid>
     );
 };
 
-const ProjectGrid: React.FC = () => {
+interface ProjectGridProps {
+    projects: Project[]
+}
+
+const ProjectGrid: React.FC<ProjectGridProps> = (projects) => {
     return (
-        <Grid container spacing={3}>
-            {projects.map((project, index) => (
+        <Grid container spacing={0}>
+            {projects.projects.map((project, index) => (
                 <ProjectCard key={index} project={project}/>
             ))}
         </Grid>
