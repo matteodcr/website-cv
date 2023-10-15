@@ -67,7 +67,7 @@ export default function App() {
                             <Route index element={<Home/>}/>
                             <Route path="projects">
                                 <Route index element={<Projects projects={projects}/>}/>
-                                {projects.map((project, index) => (
+                                {projects.map((project) => (
                                     <Route key={project.title.toLowerCase()} path={project.title.toLowerCase()}
                                            element={project.content()}/>
                                 ))}

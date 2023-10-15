@@ -12,16 +12,19 @@ jobs:
   production:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎
+      - name: 🔄 Checkout Code
         uses: actions/checkout@master
 
-      - name: Install dependencies 👨🏻‍💻
+      - name: 📦 Install Dependencies
         run: npm i
 
-      - name: Build for production 🏗️
+      - name: 🏗️ Build for Production
         run: npm run build
 
-      - name: Setup SSH
+      - name: ▶️ Run Jest Tests
+        run: npm test
+        
+      - name: 🗝️ Setup SSH Keys
         run: |
           mkdir -p ~/.ssh/
           echo "${{ secrets.SSH_PRIV_KEY }}" > ~/.ssh/id_rsa
@@ -30,7 +33,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa.pub
           ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
 
-      - name: copy builds to server
+      - name: 🚀 Copy Builds to Server
         run: |
-          ssh ${{ secrets.USER_IP}} "rm -rf /usr/share/caddy/*"
+          ssh ${{ secrets.USER_IP }} "rm -rf /usr/share/caddy/*"
           scp -r ./build/* ${{ secrets.USER_IP }}:/usr/share/caddy
