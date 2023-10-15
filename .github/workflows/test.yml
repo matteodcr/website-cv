@@ -7,7 +7,6 @@ on:
       - '!release'
 jobs:
   test:
-    name: ✅ Run Jest Tests
     runs-on: ubuntu-latest
 
     steps:
