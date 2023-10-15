@@ -16,10 +16,11 @@ module.exports = {
 
     transform: {
 
-        "^.+\\.tsx?$": "ts-jest"
+        "^.+\\.tsx?$": "ts-jest",
+        ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
 
     },
-    
+
 
     // Runs special logic, such as cleaning up components
 

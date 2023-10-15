@@ -65,6 +65,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "jest-transform-stub": "^2.0.0",
     "release-it": "^16.2.1",
     "ts-jest": "^29.1.1"
   },
