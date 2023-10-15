@@ -13,6 +13,26 @@
     }
 }
 
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+body, #root {
+    min-height: 100vh;
+}
+
+#root > footer {
+    width: 100%;
+    align-self: end;
+}
+
 
 .App-header {
     background-color: #282c34;

@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom/client";
 import * as React from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Layout from "./components/Layout";
@@ -12,6 +11,7 @@ import {Box, CssBaseline} from "@mui/material";
 import Footer from "./components/Footer";
 import Projects, {Project} from "./pages/Projects";
 import TurtleRTK from "./pages/projects/TurtleRTK";
+import './App.css';
 
 const projects: Project[] = [
     new TurtleRTK(),
