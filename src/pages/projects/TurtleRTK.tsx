@@ -1,85 +1,57 @@
-import React from "react";
-import {Project} from "../Projects";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
+import React from 'react';
+import { Project } from '../Projects';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'markdown-to-jsx';
+
+import ArticleCard from '../../components/ArticleCard';
+import ArticleFooter from '../../components/ArticleFooter';
 
 class TurtleRTK implements Project {
-    title = 'TurtleRTK';
-    description = 'Un client GNSS RTK pour smartphones IOS/Android';
-    color: string = '#8c52ff';
-    image_url: string = 'https://images.unsplash.com/photo-1628158088803-4200c2be52f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2836&q=80';
-    creationDate: string = '2023-10-08'; // Remplacez par la vraie date
-    lastModifiedDate: string = '2023-10-08'; // Remplacez par la vraie date
+  title = 'TurtleRTK';
+  description = 'Un client GNSS RTK pour smartphones IOS/Android';
+  color: string = '#8c52ff';
+  image_url: string =
+    'https://images.unsplash.com/photo-1628155849837-648cf206ec31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z25zcyUyMHJ0a3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60';
+  creationDate: string = '2023-10-08';
+  lastModifiedDate: string = '2023-10-08';
 
-    content: () => React.ReactNode = () => {
-        const markdownContent = `
-# Et Sole spoliare omnis
+  content: () => React.ReactNode = () => {
+    const markdownContent = `
+Une application mobile GNSS RTK a été développée avec React Native) et [TypeScript](https://fr.wikipedia.org/wiki/TypeScript). Cette application utilise la technologie GNSS RTK (Global Navigation Satellite System Real Time Kinematic), une technique de positionnement par satellite de haute précision.
 
-## Dumque confesso petendi exiguamque morte tale nec
+L'application a été développée en utilisant TypeScript, un langage de programmation fortement typé qui se base sur JavaScript, offrant un meilleur outillage à n'importe quelle échelle.
 
-Lorem markdownum tenebas Latiis fecit cogit iusta liquores profundo, quae
-orandus virginitate magis. Anguiferumque magis proles iuvenilior dedere gradus,
-rapta clipeo *praecipitata* dona; tibi tibi, volvens mutua clamore! Solis unda
-fidumque Cerealia, resonat felix [vultus tibi
-madidum](http://cur-ab.io/pondere-scelus.html) coniuge conspecta consuescit
-pertulerint Paraetonium admisso fulvae? Deteriora carmina, illa tamen avus rorat
-si *thalami decipere* iuvenemque haut rudentes suos deriguere? Quae rura visa
-callidus, in nubibus saepe et quam crescit, exemplum tardaque arcus!
+L'application manipule plusieurs protocoles tels que [NTRIP](https://en.wikipedia.org/wiki/Networked_Transport_of_RTCM_via_Internet_Protocol) (Networked Transport of RTCM via Internet Protocol) pour le streaming des corrections GPS sur Internet, [BLE](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) (Bluetooth Low Energy) pour la communication sans fil à faible consommation d'énergie, [NMEA](https://en.wikipedia.org/wiki/NMEA_0183) (National Marine Electronics Association) pour la communication entre les équipements marins tels que les récepteurs GPS, et [RTCM](https://www.rtcm.org/publications) pour les corrections différentielles GPS.
 
-1. Consiste leoni
-2. Qui tuam ortum primoque vidisset
-3. Est ruat
+L'interface utilisateur est intuitive et facile à utiliser, avec des fonctionnalités telles que la visualisation en temps réel des données GNSS, le suivi de la position, l'enregistrement des données et bien plus encore.
+ `;
 
-Venit parenti. Per freto minor anhelitus calamo, alios hos credule vulgus, nec
-*crescit crine* calamus, dictis. Purpureas tellus cultor. [Ante
-triste](http://terribilem-velint.net/in-effugit) aura incidis verum data videbor
-potius inattenuata semper rapiam placabitis capillis generoso vigiles inductas
-spectare axis, sortes!
+    return (
+      <Box>
+        <ArticleCard title={this.title} image_url={this.image_url} />
+        <div className="markdown-body">
+          <Markdown className="markdown-body">{markdownContent}</Markdown>
+        </div>
 
-## Iuppiter fruges in qui induta
-
-Spectans retusa, is spectans at vidit fretumque cardine **corpora illo**.
-Actoriden cui duces Mycenida tinxit, ripae gaudia Erigoneque ulvaeque inter
-**conditor mensas udaeque**. Sucos avara aquae dixit: fuit populi *teneat
-protinus*: mediis se olivae ultorque nisi posse adgrediare carebat ora
-sententia.
-
-Sollicitis ramos, nec leti cum *gutture mundum revertentes* illud tabe
-[urbes](http://manu-haberi.io/postdamno.php), decurrit leto, primo. Quem silvas
-corpora? Posita comitesque recurvam nisi quod sponte sermone; **gravibus corpus
-pro** patulos quoque aura; natas sive. Moris olivae Athin agmina virgo inque
-natus, et hirsutaque hostis haeremusque nimbos *Epimethida hoc*, revertitur
-ulnis. Et fac quoque, os adhuc scindit classe nosse.
-
-- Visuraque viso
-- Avertere Delius
-- Suis si magna nescio versae per onusque
-
-Fulmina ad locutum [saecula Tyron](http://dictis.io/stimuletur.php): qua illo
-coniecit, dei **ait**; carmina eundo ad quod Cycladas! Frondes antiquum
-[fertur](http://www.fama-positas.io/), et gramine movit pennaeque fateri ab
-fugant atque.
-        `;
-
-        return (
-            <Box>
-                <img src={this.image_url} alt={this.title} style={{width: '100%'}}/>
-
-                <Paper elevation={3} style={{paddingTop: '20px', paddingLeft: '10px', marginTop: '-20px'}}>
-                    <Typography variant="h4" gutterBottom>{this.title}</Typography>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <AccessTimeIcon style={{marginRight: '8px'}}/>
-                        <Typography variant="body2">Dernière modification : {this.lastModifiedDate}</Typography>
-                    </div>
-                </Paper>
-
-                <ReactMarkdown className="react-markdown">{markdownContent}</ReactMarkdown>
-            </Box>
-        );
-    };
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignSelf: 'flex-end',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            margin: 5,
+          }}
+        >
+          <AccessTimeIcon />
+          <Typography variant="body1"> {this.lastModifiedDate}</Typography>
+        </div>
+        <ArticleFooter></ArticleFooter>
+      </Box>
+    );
+  };
 }
 
 export default TurtleRTK;
