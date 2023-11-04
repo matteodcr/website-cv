@@ -1,16 +1,12 @@
-import ReactMarkdown from 'react-markdown'
-import React from "react";
+import ReactMarkdown from 'react-markdown';
 
 const Home = () => {
-    const markdownContent = `
+  const markdownContent = `
 # Bienvenue.
 Site en construction. 
 `;
 
-    return (
-        <ReactMarkdown>{markdownContent}</ReactMarkdown>
-    );
+  return <ReactMarkdown className="markdown">{markdownContent}</ReactMarkdown>;
 };
-
 
 export default Home;

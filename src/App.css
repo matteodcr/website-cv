@@ -1,121 +1,119 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 #root {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-body, #root {
-    min-height: 100vh;
+body,
+#root {
+  min-height: 100vh;
 }
 
 #root > footer {
-    width: 100%;
-    align-self: end;
+  width: 100%;
+  align-self: end;
 }
 
-
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Navbar horizontale pour les écrans larges */
 @media screen and (min-width: 768px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-    }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .navbar-menu {
-        display: flex;
-        justify-content: flex-end;
-    }
+  .navbar-menu {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 /* Navbar collapsable pour les écrans plus petits */
 @media screen and (max-width: 767px) {
-    .navbar-menu {
-        display: none;
-    }
+  .navbar-menu {
+    display: none;
+  }
 
-    .navbar-toggle {
-        display: block;
-    }
+  .navbar-toggle {
+    display: block;
+  }
 
-    .navbar-toggle:focus,
-    .navbar-toggle:hover {
-        text-decoration: none;
-        outline: none;
-    }
+  .navbar-toggle:focus,
+  .navbar-toggle:hover {
+    text-decoration: none;
+    outline: none;
+  }
 
-    .navbar-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        margin-bottom: 4px;
-        position: relative;
-        background-color: #333;
-        border-radius: 1px;
-        z-index: 1;
-        transform-origin: center;
-        transition-duration: 0.3s;
-        transition-property: transform;
-    }
+  .navbar-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin-bottom: 4px;
+    position: relative;
+    background-color: #333;
+    border-radius: 1px;
+    z-index: 1;
+    transform-origin: center;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
 
-    .navbar-toggle span:first-child {
-        transform-origin: left center;
-    }
+  .navbar-toggle span:first-child {
+    transform-origin: left center;
+  }
 
-    .navbar-toggle span:last-child {
-        transform-origin: left center;
-    }
+  .navbar-toggle span:last-child {
+    transform-origin: left center;
+  }
 
-    .navbar-toggle:not(.collapsed) span:first-child {
-        transform: translate(0, -6px) rotate(-45deg);
-    }
+  .navbar-toggle:not(.collapsed) span:first-child {
+    transform: translate(0, -6px) rotate(-45deg);
+  }
 
-    .navbar-toggle:not(.collapsed) span:last-child {
-        transform: translate(0, -6px) rotate(45deg);
-    }
+  .navbar-toggle:not(.collapsed) span:last-child {
+    transform: translate(0, -6px) rotate(45deg);
+  }
 }
-
-
