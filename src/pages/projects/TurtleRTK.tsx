@@ -1,8 +1,6 @@
 import React from 'react';
 import { Project } from '../Projects';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import Markdown from 'markdown-to-jsx';
 
 import ArticleCard from '../../components/ArticleCard';
@@ -10,10 +8,11 @@ import ArticleFooter from '../../components/ArticleFooter';
 
 class TurtleRTK implements Project {
   title = 'TurtleRTK';
-  description = 'Un client GNSS RTK pour smartphones IOS/Android';
-  color: string = '#8c52ff';
+  description = 'Un client GNSS RTK pour smartphones';
+  color: string = '#d2bfaf';
   image_url: string =
-    'https://images.unsplash.com/photo-1628155849837-648cf206ec31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z25zcyUyMHJ0a3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60';
+    'https://images.unsplash.com/photo-1628155933410-8f2a84bb8076?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+  techList = ['Typescript', 'React Native'];
   creationDate: string = '2023-10-08';
   lastModifiedDate: string = '2023-10-08';
 
@@ -30,24 +29,18 @@ L'interface utilisateur est intuitive et facile à utiliser, avec des fonctionna
 
     return (
       <Box>
-        <ArticleCard title={this.title} image_url={this.image_url} />
+        <ArticleCard
+          title={this.title}
+          image_url={this.image_url}
+          color={this.color}
+          content={this.content}
+          description={this.description}
+          techList={this.techList}
+        />
         <div className="markdown-body">
           <Markdown className="markdown-body">{markdownContent}</Markdown>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignSelf: 'flex-end',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            margin: 5,
-          }}
-        >
-          <AccessTimeIcon />
-          <Typography variant="body1"> {this.lastModifiedDate}</Typography>
-        </div>
         <ArticleFooter></ArticleFooter>
       </Box>
     );

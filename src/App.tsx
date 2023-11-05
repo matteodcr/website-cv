@@ -11,8 +11,16 @@ import Footer from './components/Footer';
 import Projects, { Project } from './pages/Projects';
 import TurtleRTK from './pages/projects/TurtleRTK';
 import './App.css';
+import Patatruck from './pages/projects/Patatruck.tsx';
+import PollenTraquaire from './pages/projects/PollenTraquaire.tsx';
+import Parasist from './pages/projects/Parasist.tsx';
 
-const projects: Project[] = [new TurtleRTK()];
+const projects: Project[] = [
+  new TurtleRTK(),
+  new Patatruck(),
+  new PollenTraquaire(),
+  new Parasist(),
+];
 
 export default function App() {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
@@ -53,7 +61,7 @@ export default function App() {
             sx={{
               flex: 1,
               px: '25%',
-              '@media (max-width: 600px)': { px: '3%' },
+              '@media (max-width: 1200px)': { px: '3%' },
             }}
           >
             <Routes>
