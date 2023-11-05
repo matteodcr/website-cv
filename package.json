@@ -54,5 +54,9 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "src/**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write --ignore-unknown"
-  }
+  },
+  "description": "Mattéo Decorsaire personal website",
+  "main": "index.js",
+  "repository": "git@github.com:matteodcr/website-cv.git",
+  "author": "Matteo <mattdecorsaire@gmail.com>"
 }
