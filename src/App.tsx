@@ -14,6 +14,7 @@ import './App.css';
 import Patatruck from './pages/projects/Patatruck.tsx';
 import PollenTraquaire from './pages/projects/PollenTraquaire.tsx';
 import Parasist from './pages/projects/Parasist.tsx';
+import Curriculum from './pages/Curriculum.tsx';
 
 const projects: Project[] = [
   new TurtleRTK(),
@@ -66,6 +67,7 @@ export default function App() {
           >
             <Routes>
               <Route index element={<Home />} />
+              <Route path="cv" element={<Curriculum />} />
               <Route path="projects">
                 <Route index element={<Projects projects={projects} />} />
                 {projects.map(project => (

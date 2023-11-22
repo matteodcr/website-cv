@@ -16,6 +16,7 @@ import MaterialSwitch from './MaterialSwitch';
 
 const pages = [
   { text: 'Accueil', href: '/' },
+  { text: 'Curriculum', href: '/cv' },
   { text: 'Projets', href: '/projects' },
   { text: 'Contact', href: '/contact' },
 ];
@@ -43,9 +44,11 @@ function ResponsiveAppBar() {
   /*    const handleCloseUserMenu = () => {
             setAnchorElUser(null);
         };*/
-
   return (
-    <AppBar position="static">
+    <AppBar
+      // sx={{ bgcolor: theme.palette.background.default }}
+      position="static"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link
