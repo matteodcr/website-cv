@@ -123,25 +123,62 @@ ul {
   }
 }
 
-a {
+a.title {
+  cursor: pointer;
   text-decoration: none;
   position: relative;
   color: inherit;
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 0),
+      rgba(105, 76, 76, 0)
+    ),
+    linear-gradient(
+      to right,
+      rgb(131, 252, 200),
+      rgb(170, 178, 255),
+      rgb(236, 160, 255)
+    );
+  background-size:
+    100% 2px,
+    0 3px;
+  background-position:
+    10% 100%,
+    0% 92%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms;
 }
 
-a:hover::before {
-  bottom: 0;
-  height: 100%;
+a.title:hover {
+  background-size:
+    0 3px,
+    100% 3px;
 }
 
-a::before {
-  content: '';
-  background-color: hsla(197, 81%, 71%, 0.75);
-  position: absolute;
-  left: 0;
-  bottom: 3px;
-  width: 100%;
-  height: 5px;
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
+a {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  font-weight: bold;
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 0),
+      rgba(105, 76, 76, 0)
+    ),
+    linear-gradient(to right, currentColor, currentColor, currentColor);
+  background-size:
+    100% 4px,
+    0 3px;
+  background-position:
+    100% 100%,
+    0% 85%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms;
+}
+
+a:hover {
+  background-size:
+    0 3px,
+    100% 3px;
 }

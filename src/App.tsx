@@ -62,7 +62,7 @@ export default function App() {
             sx={{
               flex: 1,
               px: '25%',
-              '@media (max-width: 1200px)': { px: '3%' },
+              '@media (max-width: 1700px)': { px: '3%' },
             }}
           >
             <Routes>

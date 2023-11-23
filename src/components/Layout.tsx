@@ -7,51 +7,52 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
-import ColorModeContext from '../ColorContext';
-import MaterialSwitch from './MaterialSwitch';
 
-const pages = [
-  { text: 'Accueil', href: '/' },
-  { text: 'Curriculum', href: '/cv' },
-  { text: 'Projets', href: '/projects' },
-  { text: 'Contact', href: '/contact' },
-];
-
+interface MainPage {
+  text: string;
+  href: string;
+  action?: [boolean, (value: boolean) => void];
+}
 function ResponsiveAppBar() {
+  const pages: MainPage[] = [
+    { text: 'Curriculum', href: '/cv' },
+    { text: 'Projets', href: '/projects' },
+    {
+      text: 'Contact',
+      href: '/contact',
+    },
+  ];
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
-  // const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
+  // const colorMode = React.useContext(ColorModeContext);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  /*    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-            setAnchorElUser(event.currentTarget);
-        };*/
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  /*    const handleCloseUserMenu = () => {
-            setAnchorElUser(null);
-        };*/
   return (
     <AppBar
-      // sx={{ bgcolor: theme.palette.background.default }}
+      sx={{
+        bgcolor: theme.palette.background.default,
+        color: theme.palette.text.primary,
+      }}
       position="static"
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link
+            className="title"
             to="/"
             key="/"
             style={{ textDecoration: 'none', color: 'inherit' }}
@@ -120,18 +121,22 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map(page => (
-                <Link
-                  to={page.href}
-                  key={page.text}
-                  style={{
-                    textDecoration: 'none',
-                    color: theme.palette.text.primary,
-                  }}
-                >
-                  <MenuItem key={page.text} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.text}</Typography>
-                  </MenuItem>
-                </Link>
+                <MenuItem key={page.text} onClick={handleCloseNavMenu}>
+                  <Link
+                    to={page.href}
+                    key={page.text}
+                    style={{
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <Typography
+                      sx={{ color: theme.palette.text.primary }}
+                      textAlign="center"
+                    >
+                      {page.text}
+                    </Typography>
+                  </Link>
+                </MenuItem>
               ))}
             </Menu>
           </Box>
@@ -160,25 +165,18 @@ function ResponsiveAppBar() {
               <Link
                 to={page.href}
                 key={page.text}
-                style={{ textDecoration: 'none', color: 'inherit' }}
+                className="title"
+                style={{
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  marginLeft: 30,
+                }}
               >
-                <Button
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                  onClick={handleCloseNavMenu}
-                >
+                <Typography variant="button" sx={{}}>
                   {page.text}
-                </Button>
+                </Typography>
               </Link>
             ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <MaterialSwitch
-              checked={theme.palette.mode === 'dark'}
-              onChange={colorMode.toggleColorMode}
-              name="colorModeSwitch"
-              color="default"
-            />
           </Box>
         </Toolbar>
       </Container>
