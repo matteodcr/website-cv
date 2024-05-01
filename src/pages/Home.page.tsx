@@ -5,8 +5,6 @@ import AnimatedPage from '@/components/AnimatedPage';
 import HomeCard, { HomeCardProps } from '@/components/HomeCard';
 import { useNavigationStore } from '@/store/Navigation.store';
 
-const iconSize: number = 40;
-
 const data: HomeCardProps[] = [];
 
 export const HomePage = observer(() => {

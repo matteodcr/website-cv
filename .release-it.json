@@ -1,0 +1,13 @@
+{
+  "github": {
+    "release": true
+  },
+  "git": {
+    "requireBranch": "release",
+    "commitMessage": "Release v${version}"
+  },
+  "hooks": {
+    "before:init": ["git fetch --prune --prune-tags origin", "git pull", "yarn prettier:write", "yarn lint"],
+    "after:bump": "npx auto-changelog -p"
+  }
+}

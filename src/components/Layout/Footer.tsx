@@ -8,7 +8,7 @@ interface FooterButtonProps extends Route {
   onClick: () => void;
 }
 
-function FooterButton({ icon, path, name, isActive, onClick }: FooterButtonProps) {
+function FooterButton({ icon, path, name, isActive }: FooterButtonProps) {
   const navigate = useNavigate();
   return (
     <Center>
