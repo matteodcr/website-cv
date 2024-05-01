@@ -35,5 +35,5 @@ jobs:
 
       - name: 🚀 Copy Builds to Server
         run: |
-          ssh ${{ secrets.USER_IP }} "find /usr/share/caddy/* -mindepth 1 -delete"
+          ssh ${{ secrets.USER_IP }} "for file in /usr/share/caddy/*; rm -rf \$file; end"
           scp -r ./dist/* ${{ secrets.USER_IP }}:/usr/share/caddy
