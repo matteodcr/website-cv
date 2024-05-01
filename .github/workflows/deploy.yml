@@ -35,5 +35,6 @@ jobs:
 
       - name: 🚀 Copy Builds to Server
         run: |
+          ssh ${{ secrets.USER_IP }} "cd /usr/share && pwd"
           ssh ${{ secrets.USER_IP }} "rm -rf /usr/share/caddy/*"
           scp -r ./dist/* ${{ secrets.USER_IP }}:/usr/share/caddy
