@@ -1,0 +1,39 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - release
+  pull_request:
+    branches:
+      - release
+
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Checkout Code
+        uses: actions/checkout@master
+
+      - name: 📦 Install Dependencies
+        run: yarn install
+
+      - name: 🏗️ Build for Production
+        run: yarn build
+
+      - name: ▶️ Run Jest Tests
+        run: yarn test
+
+      - name: 🗝️ Setup SSH Keys
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIV_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PUB_KEY }}" > ~/.ssh/id_rsa.pub
+          chmod 600 ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa.pub
+          ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
+
+      - name: 🚀 Copy Builds to Server
+        run: |
+          ssh ${{ secrets.USER_IP }} "rm -rf /usr/share/caddy/*"
+          scp -r ./build/* ${{ secrets.USER_IP }}:/usr/share/caddy

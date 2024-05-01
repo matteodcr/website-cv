@@ -1,0 +1,16 @@
+@define-mixin transitions {
+    transition: transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+
+
+.card {
+    @mixin transitions;
+
+    &:hover {
+        transform: scale(1.3);
+        animation: shadow-pulse 1s infinite;
+    }
+}

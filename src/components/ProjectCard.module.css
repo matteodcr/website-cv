@@ -1,0 +1,21 @@
+.card {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+@define-mixin transitions {
+    transition: transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+
+
+.picture {
+    @mixin transitions;
+
+    &:hover {
+        transform: scale(1.02);
+        animation: shadow-pulse 1s infinite;
+    }
+}
