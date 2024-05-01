@@ -35,4 +35,4 @@ jobs:
 
       - name: 🚀 Copy Builds to Server
         run: |
-          scp -rT ./dist/* ${{ secrets.USER_IP }}:/usr/share/caddy
+          sudo scp -rT ./dist/* ${{ secrets.USER_IP }}:/usr/share/caddy
