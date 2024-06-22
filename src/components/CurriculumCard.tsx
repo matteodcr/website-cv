@@ -29,7 +29,7 @@ export default function CurriculumCard({
 
   const Content = () => (
     <>
-      <BackgroundImage src={image} h={isMobile ? 200 : 200} w={isMobile ? '100%' : 200}>
+      <BackgroundImage src={backgroundImage} h={isMobile ? 200 : 200} w={isMobile ? '100%' : 200}>
         <Anchor onClick={goToLink} target="_blank" underline="always">
           <Flex
             justify="center"
@@ -37,7 +37,7 @@ export default function CurriculumCard({
             h="100%"
             style={{ backdropFilter: 'blur(1px) saturate(200%)' }}
           >
-            <Image src={backgroundImage} className={styles.card} alt="front" h="100" w="100" />
+            <Image src={image} className={styles.card} alt="front" h="100" w="100" />
           </Flex>
         </Anchor>
       </BackgroundImage>

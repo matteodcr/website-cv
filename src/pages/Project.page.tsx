@@ -8,8 +8,11 @@ import { TbBrandReactNative } from 'react-icons/tb';
 import { observer } from 'mobx-react-lite';
 import ProjectCard, { ProjectProps, Technologies } from '@/components/ProjectCard';
 import AnimatedPage from '@/components/AnimatedPage';
-import pizzaProject from '@/assets/pizza-party.png';
 import { useNavigationStore } from '@/store/Navigation.store';
+
+import pizzaProject from '../assets/projects/pizza-party.png';
+import turtleProject from '../assets/projects/turtle.avif';
+import patatruckProject from '../assets/projects/patatruck.png';
 
 const technologies: { [key: string]: Technologies } = {
   java: {
@@ -58,8 +61,7 @@ const projectData: ProjectProps[] = [
     description: 'Application mobile de géolocalisation GNSS RTK',
     link: 'https://github.com/matteodcr/TurtleRTK',
     name: '🐢 Turtle RTK',
-    image:
-      'https://images.unsplash.com/photo-1517504734587-2890819debab?q=80&w=1639&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: turtleProject,
     technologies: [technologies.reactNative, technologies.typescript],
     font: 'Fjalla One',
     fontColor: '#6a3de8',
@@ -68,7 +70,7 @@ const projectData: ProjectProps[] = [
     description: 'Jeu coopératif basé sur des automates',
     link: 'https://github.com/matteodcr/Patatruck',
     name: '🥔 Patatruck',
-    image: 'https://matteo.decorsaire.me/assets/Patatruck-1ecbc2af.png',
+    image: patatruckProject,
     technologies: [technologies.java],
     font: 'Fugaz One',
     fontColor: 'yellow',
