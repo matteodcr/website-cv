@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Center, Flex, Group, Text } from '@mantine/core';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Route, routes } from '@/Router';
+import { useNavigationStore } from '@/store/Navigation.store';
 
 interface FooterButtonProps extends Route {
   isActive: boolean;
@@ -35,10 +36,37 @@ function FooterButton({ icon, path, name, isActive }: FooterButtonProps) {
 export default function Footer() {
   const [activeRoute, setActiveRoute] = useState<string>('');
   const location = useLocation();
+  const navigate = useNavigate();
+  const [activeButtonIndex, setActiveButtonIndex] = useState<number>(-1);
+  const store = useNavigationStore();
 
+  // Utilise useEffect pour mettre à jour activeButtonIndex
   useEffect(() => {
-    setActiveRoute(location.pathname);
-  }, [location]);
+    // Fonction pour mettre à jour activeButtonIndex basée sur l'URL actuelle
+    const updateActiveButtonIndex = () => {
+      const currentPath = window.location.pathname;
+      const foundIndex = Object.keys(routes).findIndex((key) => routes[key].path === currentPath);
+      setActiveButtonIndex(foundIndex);
+    };
+
+    // Appelle la fonction initiale pour mettre à jour activeButtonIndex lors du rendu initial
+    updateActiveButtonIndex();
+
+    // Ajoute un écouteur d'événement pour mettre à jour activeButtonIndex lorsque l'URL change
+    const handleLocationChange = () => {
+      updateActiveButtonIndex();
+    };
+    window.addEventListener('popstate', handleLocationChange);
+
+    // Nettoie l'écouteur d'événement lors du démontage du composant
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+    };
+  }, []); // Le tableau vide en tant que deuxième argument signifie que useEffect s'exécute uniquement une fois
+
+  const onClick = (destRoute: string) => {
+    store.navigate(navigate, window.location.pathname, destRoute);
+  };
 
   return (
     <Group
@@ -53,7 +81,10 @@ export default function Footer() {
         <FooterButton
           key={index}
           isActive={routes[key].path === activeRoute}
-          onClick={() => setActiveRoute(routes[key].path)}
+          onClick={() => {
+            onClick(routes[key].path);
+            setActiveButtonIndex(index);
+          }}
           {...routes[key]}
         />
       ))}

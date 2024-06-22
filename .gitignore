@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 .DS_Store
+/.idea/copilot/chatSessions/00000000000.xd
+
+/.idea

@@ -10,10 +10,6 @@ import ProjectCard, { ProjectProps, Technologies } from '@/components/ProjectCar
 import AnimatedPage from '@/components/AnimatedPage';
 import { useNavigationStore } from '@/store/Navigation.store';
 
-import pizzaProject from '../assets/projects/pizza-party.png';
-import turtleProject from '../assets/projects/turtle.avif';
-import patatruckProject from '../assets/projects/patatruck.png';
-
 const technologies: { [key: string]: Technologies } = {
   java: {
     name: 'Java',
@@ -52,7 +48,8 @@ const projectData: ProjectProps[] = [
     description: 'Application web de secret santa pour des pizzas',
     link: 'https://github.com/matteodcr/santa-pizza',
     name: '🍕 Pizza Party',
-    image: pizzaProject,
+    // image: pizzaProject,
+    backgroundColor: '#c7817c',
     technologies: [technologies.nestjs, technologies.typescript, technologies.postgresql],
     font: 'Titan One',
     fontColor: '#be1931',
@@ -61,7 +58,8 @@ const projectData: ProjectProps[] = [
     description: 'Application mobile de géolocalisation GNSS RTK',
     link: 'https://github.com/matteodcr/TurtleRTK',
     name: '🐢 Turtle RTK',
-    image: turtleProject,
+    //image: turtleProject,
+    backgroundColor: '#a08cbf',
     technologies: [technologies.reactNative, technologies.typescript],
     font: 'Fjalla One',
     fontColor: '#6a3de8',
@@ -70,10 +68,11 @@ const projectData: ProjectProps[] = [
     description: 'Jeu coopératif basé sur des automates',
     link: 'https://github.com/matteodcr/Patatruck',
     name: '🥔 Patatruck',
-    image: patatruckProject,
+    //image: patatruckProject,
+    backgroundColor: '#ac905f',
     technologies: [technologies.java],
     font: 'Fugaz One',
-    fontColor: 'yellow',
+    fontColor: '#ffc000',
   },
 ];
 
