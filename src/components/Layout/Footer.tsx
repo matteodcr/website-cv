@@ -72,7 +72,8 @@ export default function Footer() {
           keyRoute={key}
           indexRoute={index}
           key={index}
-          {...routes[key]} />
+          {...routes[key]}
+        />
       ))}
     </Group>
   );
