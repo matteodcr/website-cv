@@ -5,21 +5,13 @@ import { Route, routes } from '@/Router';
 import { useNavigationStore } from '@/store/Navigation.store';
 
 interface FooterButtonProps extends Route {
-  onClick: () => void;
   keyRoute: string;
   indexRoute: number;
   setActiveRoute: (route: string) => void;
   activeRoute: string;
 }
 
-function FooterButton({
-  icon,
-  path,
-  name,
-  keyRoute,
-  setActiveRoute,
-  activeRoute,
-}: FooterButtonProps) {
+function FooterButton({ icon, name, keyRoute, setActiveRoute, activeRoute }: FooterButtonProps) {
   const navigate = useNavigate();
   const store = useNavigationStore();
 
@@ -75,16 +67,12 @@ export default function Footer() {
     >
       {Object.keys(routes).map((key, index) => (
         <FooterButton
-          onClick={function (): void {
-            throw new Error('Function not implemented.');
-          }}
           setActiveRoute={setActiveRoute}
           activeRoute={activeRoute}
           keyRoute={key}
           indexRoute={index}
           key={index}
-          {...routes[key]}
-        />
+          {...routes[key]} />
       ))}
     </Group>
   );
