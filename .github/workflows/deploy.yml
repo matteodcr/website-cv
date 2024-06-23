@@ -35,4 +35,4 @@ jobs:
 
       - name: 🚀 Copy Builds to Server
         run: |
-          sudo scp -rT ./dist/* ${{ secrets.USER_IP }}:/usr/share/caddy
+          sudo scp -rT -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ./dist/* ${{ secrets.USER_IP }}:/usr/share/caddy
