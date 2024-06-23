@@ -6,31 +6,33 @@ import CurriculumCard, { CurriculumProps } from '@/components/CurriculumCard';
 import { useNavigationStore } from '@/store/Navigation.store';
 
 import polytechLogo from '../assets/experience/polytech-logo.png';
-import fitLogo from '../assets/experience/fit-logo.jpg';
-import etsLogo from '../assets/experience/ets-logo.png';
-import mcnLogo from '../assets/experience/mcn-logo.jpg';
+import iaeLogo from '../assets/experience/iae-logo.png';
+import chuLogo from '../assets/experience/chu-logo.jpg';
+import hugLogo from '../assets/experience/hug-logo.png';
+import sopraLogo from '../assets/experience/sopra-logo.png';
 
 import polytechBg from '../assets/experience/polytech-bg.jpg';
-import fitBg from '../assets/experience/fit-bg.jpg';
-import etsBg from '../assets/experience/ets-bg.png';
-import mcnBg from '../assets/experience/mcn-bg.jpg';
+import iaeBg from '../assets/experience/iae-bg.jpg';
+import chuBg from '../assets/experience/chu-bg.jpg';
+import hugBg from '../assets/experience/hug-bg.jpg';
+import sopraBg from '../assets/experience/sopra-bg.jpg';
 
 const formationData: CurriculumProps[] = [
   {
-    title: 'Maitrise en génie logiciel',
+    title: 'Management et Administration des Entreprises (MAE)',
     description: '',
-    link: 'https://www.etsmtl.ca/etude/deuxieme-cycle/maitrise-genie-logiciel',
-    image: etsLogo,
-    date: 'Depuis 2023',
-    place: 'ETS Montréal, Canada',
-    backgroundImage: etsBg,
+    link: 'https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-management-et-administration-des-entreprises-IDIV4XI5.html',
+    image: iaeLogo,
+    date: 'De 2018 à 2020',
+    place: 'IAE Grenoble INP-UGA, France',
+    backgroundImage: iaeBg,
   },
   {
-    title: 'Ingénieur en Informatique',
+    title: 'Ingénieure en Technologies de l\'Information pour la Santé',
     description: '',
-    link: 'https://polytech.grenoble-inp.fr/fr/formations/informatique-1',
+    link: 'https://polytech.grenoble-inp.fr/fr/formations/technologies-de-linformation-pour-la-sante-1#page-presentation',
     image: polytechLogo,
-    date: 'Depuis 2021',
+    date: 'De 2016 à 2019',
     place: 'Polytech Grenoble - INP UGA, France',
     backgroundImage: polytechBg,
   },
@@ -38,22 +40,31 @@ const formationData: CurriculumProps[] = [
 
 const experienceData: CurriculumProps[] = [
   {
-    title: 'Conseiller en IA',
+    title: 'Business Analyst / Experte fonctionnelle (MOE)',
     description: '',
-    link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
-    image: mcnLogo,
-    date: 'Depuis mai 2024',
-    place: 'Stage - CEI3A, Ministère de la Cybersécurité et du Numérique, Montréal, Canada',
-    backgroundImage: mcnBg,
+    link: 'https://www.soprasteria.com/fr/secteurs-activite/assurance-protection-sociale',
+    image: sopraLogo,
+    date: 'Depuis avril 2019',
+    place: 'Sopra Steria, Grenoble, France',
+    backgroundImage: sopraBg,
   },
   {
-    title: 'Développeur en vision par ordinateur',
+    title: 'Développement d\'une application mobile',
     description: '',
-    link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
-    image: fitLogo,
-    date: 'De mai à juillet 2023',
-    place: 'Stage - ImproLab - FIT CTU, Prague, Tchéquie',
-    backgroundImage: fitBg,
+    link: 'https://www.hug.ch/',
+    image: hugLogo,
+    date: 'De mai à août 2018',
+    place: 'Hôpitaux Universitaires Genève, Suisse',
+    backgroundImage: hugBg,
+  },
+  {
+    title: 'Observation de l\'équipe médicale',
+    description: '',
+    link: 'https://www.chu-grenoble.fr/',
+    image: chuLogo,
+    date: '2017',
+    place: 'Centre Hospitalier Universitaire de Grenoble, France',
+    backgroundImage: chuBg,
   },
 ];
 
@@ -80,7 +91,7 @@ export const CurriculumPage = observer(() => {
           <IconFileTypeDoc
             onClick={() =>
               window.open(
-                'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit',
+                '',
                 '_blank',
                 'noopener noreferrer'
               )

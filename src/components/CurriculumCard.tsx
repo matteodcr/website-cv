@@ -45,7 +45,7 @@ export default function CurriculumCard({
               className={styles.card}
               alt="front"
               height="100"
-              width="100"
+              //width="100"
             />
           </Flex>
         </Anchor>

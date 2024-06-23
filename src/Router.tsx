@@ -1,12 +1,11 @@
 import React, { ReactNode } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { IconBulb, IconHome, IconMail, IconRoute } from '@tabler/icons-react';
+import { IconHome, IconMail, IconRoute } from '@tabler/icons-react';
 import NotFoundPage from '@/pages/NotFound.page';
 import AnimatedPage from '@/components/AnimatedPage';
 import { HomePage } from '@/pages/Home.page';
 import { CurriculumPage } from '@/pages/Curriculum.page';
-import { ProjectPage } from '@/pages/Project.page';
 import { ContactPage } from '@/pages/Contact.page';
 
 export interface Route {
@@ -28,12 +27,12 @@ export const routes: { [key: string]: Route } = {
     element: <CurriculumPage />,
     icon: <IconRoute />,
   },
-  project: {
-    name: 'Projets',
-    path: '/projects',
-    element: <ProjectPage />,
-    icon: <IconBulb />,
-  },
+  // project: {
+  //   name: 'Projets',
+  //   path: '/projects',
+  //   element: <ProjectPage />,
+  //   icon: <IconBulb />,
+  // },
   contact: {
     name: 'Contact',
     path: '/contact',

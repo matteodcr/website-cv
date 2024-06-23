@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, em, SimpleGrid, Stack, Textarea, TextInput, Title } from '@mantine/core';
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import { IconBrandLinkedin } from '@tabler/icons-react';
 import { useMediaQuery } from '@mantine/hooks';
 import { observer } from 'mobx-react-lite';
 import AnimatedPage from '@/components/AnimatedPage';
@@ -9,13 +9,8 @@ import { useNavigationStore } from '@/store/Navigation.store';
 
 const socialLinksData: SocialLinkProps[] = [
   {
-    icon: <IconBrandGithub />,
-    href: 'https://github.com/matteodcr',
-    label: 'Github',
-  },
-  {
     icon: <IconBrandLinkedin />,
-    href: 'https://www.linkedin.com/in/matteodecorsaire/en?originalSubdomain=ca',
+    href: 'https://www.linkedin.com/in/lisa-d%C3%A9corsaire-782638157/',
     label: 'Linkedin',
   },
 ];
