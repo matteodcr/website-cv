@@ -1,5 +1,4 @@
 import '@mantine/core/styles.css';
-import './App.css';
 
 import React, { useEffect, useState } from 'react';
 import { MantineProvider } from '@mantine/core';
