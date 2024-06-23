@@ -17,11 +17,11 @@ export default function NotFoundPage() {
         <Title>404 - Page Non Trouvée</Title>
       </Center>
       <Center>
-        <Text>Désolé, cette page n'existe pas</Text>
+        <Text>Désolé, cette page est inexistante</Text>
       </Center>
       <Center>
         <Anchor onClick={() => navigate('/')} target="_blank">
-          Retour à l'accueil
+          Retour
         </Anchor>
       </Center>
     </Stack>
