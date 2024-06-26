@@ -7,12 +7,12 @@ import HomeCard, { HomeCardProps } from '@/components/HomeCard';
 import { useNavigationStore } from '@/store/Navigation.store';
 
 const data: HomeCardProps[] = [
-    {
-        icon: <IconBrandLinkedin />,
-        title: 'Linkedin',
-        description: '',
-        link: 'https://www.linkedin.com/in/lisa-d%C3%A9corsaire-782638157/',
-    },
+  {
+    icon: <IconBrandLinkedin />,
+    title: 'Linkedin',
+    description: '',
+    link: 'https://www.linkedin.com/in/lisa-d%C3%A9corsaire-782638157/',
+  },
 ];
 
 export const HomePage = observer(() => {

@@ -28,7 +28,7 @@ const formationData: CurriculumProps[] = [
     backgroundImage: iaeBg,
   },
   {
-    title: 'Ingénieure en Technologies de l\'Information pour la Santé',
+    title: "Ingénieure en Technologies de l'Information pour la Santé",
     description: '',
     link: 'https://polytech.grenoble-inp.fr/fr/formations/technologies-de-linformation-pour-la-sante-1#page-presentation',
     image: polytechLogo,
@@ -49,7 +49,7 @@ const experienceData: CurriculumProps[] = [
     backgroundImage: sopraBg,
   },
   {
-    title: 'Développement d\'une application mobile',
+    title: "Développement d'une application mobile",
     description: '',
     link: 'https://www.hug.ch/',
     image: hugLogo,
@@ -58,7 +58,7 @@ const experienceData: CurriculumProps[] = [
     backgroundImage: hugBg,
   },
   {
-    title: 'Observation de l\'équipe médicale',
+    title: "Observation de l'équipe médicale",
     description: '',
     link: 'https://www.chu-grenoble.fr/',
     image: chuLogo,
@@ -89,13 +89,7 @@ export const CurriculumPage = observer(() => {
         <Title>Curriculum</Title>
         <ActionIcon size={42} variant="default" aria-label="ActionIcon with size as a number">
           <IconFileTypeDoc
-            onClick={() =>
-              window.open(
-                '',
-                '_blank',
-                'noopener noreferrer'
-              )
-            }
+            onClick={() => window.open('', '_blank', 'noopener noreferrer')}
             style={{
               width: rem(24),
               height: rem(24),
