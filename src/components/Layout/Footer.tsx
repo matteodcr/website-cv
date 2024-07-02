@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Center, Flex, Group, Text } from '@mantine/core';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Route, routes } from '@/Router';
+import { Route } from '@/Router';
+import { getWebsiteContent } from '@/config/structure';
 
 interface FooterButtonProps extends Route {
   isActive: boolean;
@@ -10,6 +11,7 @@ interface FooterButtonProps extends Route {
 
 function FooterButton({ icon, path, name, isActive }: FooterButtonProps) {
   const navigate = useNavigate();
+
   return (
     <Center>
       <Button
@@ -35,6 +37,8 @@ function FooterButton({ icon, path, name, isActive }: FooterButtonProps) {
 export default function Footer() {
   const [activeRoute, setActiveRoute] = useState<string>('');
   const location = useLocation();
+
+  const { routes } = getWebsiteContent();
 
   useEffect(() => {
     setActiveRoute(location.pathname);

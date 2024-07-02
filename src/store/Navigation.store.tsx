@@ -1,7 +1,9 @@
 import { createContext, useContext } from 'react';
 import { makeAutoObservable } from 'mobx';
 import { NavigateFunction } from 'react-router-dom';
-import { routes } from '@/Router';
+import { getWebsiteContent } from '@/config/structure';
+
+const { routes } = getWebsiteContent();
 
 class NavigationStore {
   routePosition: 'left' | 'right' = 'left';

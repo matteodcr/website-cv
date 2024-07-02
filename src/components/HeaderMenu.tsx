@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { FloatingIndicator, UnstyledButton } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 import classes from '@/components/HeaderMenu.module.css';
-import { routes } from '@/Router';
 import { useNavigationStore } from '@/store/Navigation.store';
+import { getWebsiteContent } from '@/config/structure';
 
 export default function HeaderMenu() {
     const navigate = useNavigate();
@@ -11,6 +11,8 @@ export default function HeaderMenu() {
     const [controlsRefs, setControlsRefs] = useState<Record<string, HTMLButtonElement | null>>({});
     const [active, setActive] = useState(0);
     const store = useNavigationStore();
+
+    const { routes } = getWebsiteContent();
 
     const setControlRef = (index: number) => (node: HTMLButtonElement) => {
         controlsRefs[index] = node;
