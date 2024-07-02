@@ -101,8 +101,8 @@ const content: WebsiteContent = {
             name: '🍕 Pizza Party',
             // image: pizzaProject,
             backgroundColor: '#c7817c',
-            technologies: [technologies.nestjs, technologies.typescript, technologies.postgresql],
-            font: 'Titan One',
+            technologies: [technologies.nestjs, technologies.postgresql, technologies.react, technologies.typescript],
+            //font: 'Titan One',
             fontColor: '#be1931',
         },
         {
@@ -112,7 +112,7 @@ const content: WebsiteContent = {
             //image: turtleProject,
             backgroundColor: '#a08cbf',
             technologies: [technologies.reactNative, technologies.typescript],
-            font: 'Fjalla One',
+            //font: 'Fjalla One',
             fontColor: '#6a3de8',
         },
         {
@@ -122,7 +122,7 @@ const content: WebsiteContent = {
             //image: patatruckProject,
             backgroundColor: '#ac905f',
             technologies: [technologies.java],
-            font: 'Fugaz One',
+            //font: 'Fugaz One',
             fontColor: '#ffc000',
         },
     ],

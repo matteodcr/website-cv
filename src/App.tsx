@@ -6,6 +6,8 @@ import { Layout } from '@/components/Layout/Layout';
 import { Pages } from '@/Router';
 import CustomLoader from '@/components/CustomLoader';
 
+import '@/App.module.css';
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 

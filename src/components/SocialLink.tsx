@@ -13,7 +13,7 @@ export default function SocialLink({ icon, href, label }: SocialLinkProps) {
 
   return (
     <Group>
-      <ActionIcon size="xl" color="blue" radius="xl" onClick={handleClick}>
+      <ActionIcon variant="white" color="rgba(0, 0, 0, 1)" size="xl" radius="xs" onClick={handleClick}>
         {icon}
       </ActionIcon>
       <Anchor href={href} target="_blank">

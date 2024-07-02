@@ -8,7 +8,7 @@ import { useNavigationStore } from '@/store/Navigation.store';
 import { getWebsiteContent } from '@/config/structure';
 
 export const ProjectPage = observer(() => {
-  const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
+  const isMobile = useMediaQuery(`(max-width: ${em(1500)})`);
   const store = useNavigationStore();
 
   const { projectData } = getWebsiteContent();

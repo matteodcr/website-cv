@@ -15,7 +15,7 @@ export const ContactPage = observer(() => {
   return (
       <AnimatedPage direction={store.routePosition}>
         <Title>Contact</Title>
-        <SimpleGrid cols={isMobile ? 1 : 2}>
+        <SimpleGrid cols={isMobile ? 1 : 1}>
           <Stack p="md">
             <Stack gap="md">
               {socialLinksData.map((socialLink, index) => (

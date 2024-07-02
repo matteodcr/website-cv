@@ -1,7 +1,7 @@
 import { FaJava } from 'react-icons/fa';
 import { SiNestjs, SiTypescript } from 'react-icons/si';
 import { DiPostgresql } from 'react-icons/di';
-import { TbBrandReactNative } from 'react-icons/tb';
+import { TbBrandReact, TbBrandReactNative } from 'react-icons/tb';
 import React, { ReactNode } from 'react';
 
 export interface Technologies {
@@ -41,6 +41,12 @@ const technologies: { [key: string]: Technologies } = {
         icon: <TbBrandReactNative color="#2ddafd" size={20} />,
         backgroundColor: '#292929',
         textColor: '#2ddafd',
+    },
+    react: {
+        name: 'React',
+        icon: <TbBrandReact color="#61dafb" size={20} />,
+        backgroundColor: '#ffffff',
+        textColor: '#61dafb',
     },
 };
 

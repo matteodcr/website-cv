@@ -50,8 +50,11 @@ export default function Footer() {
       justify="center"
       align="stretch"
       h={80}
-      style={{ position: 'fixed', bottom: 0, left: 0, right: 0, borderTop: '1px solid #f0f0f0' }}
+      style={{ position: 'fixed', bottom: 0, left: 0, right: 0, border: '1px solid gray', borderRadius: '20px' }}
       bg="white"
+      mb={10}
+      mx={10}
+
     >
       {Object.keys(routes).map((key, index) => (
         <FooterButton

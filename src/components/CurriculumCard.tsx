@@ -50,7 +50,7 @@ export default function CurriculumCard({ image, title, description, link, place,
             {place}
           </Text>
           </Group>
-          <Text lineClamp={1} py="sm">
+          <Text py="sm">
             {description}
           </Text>
         </Stack>

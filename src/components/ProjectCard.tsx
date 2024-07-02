@@ -26,7 +26,7 @@ function TechnologiesBadge({ name, icon, backgroundColor, textColor }: Technolog
 
 export interface ProjectProps {
   name: string;
-  font: string;
+  font?: string;
   fontColor: string;
   description: string;
   link: string;
@@ -70,15 +70,15 @@ export default function ProjectCard({
                 <Text
                   className={styles.card}
                   fz={40}
+                  fw={800}
                   c={fontColor}
-                  style={{
-                      fontFamily: font,
-                    }}
+                  style={font !== undefined ? { fontFamily: font,
+                    } : {}}
                 >
                   {name}
                 </Text>
               </Flex>
-              <Flex mih={50} gap="md" justify="center" align="center" direction="row" wrap="wrap">
+              <Flex mih={50} pt={0} gap="md" justify="center" align="center" direction="row" wrap="wrap">
                 {technologies.map((tech, index) => (
                     <TechnologiesBadge key={index} {...tech} />
                 ))}
