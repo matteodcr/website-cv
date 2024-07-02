@@ -10,7 +10,7 @@
     line-height: 1;
     color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
     border-radius: var(--mantine-radius-md);
-    font-size: var(--mantine-font-size-lg);
+    font-size: var(--mantine-font-size-xl);
     transition: color 100ms ease;
     font-weight: 900;
 

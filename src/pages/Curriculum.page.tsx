@@ -15,7 +15,7 @@ import fitBg from '../assets/experience/fit-bg.jpg';
 import etsBg from '../assets/experience/ets-bg.png';
 import mcnBg from '../assets/experience/mcn-bg.jpg';
 
-const URL_CV = 'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit?usp=sharing';
+const URL_CV: string = 'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit?usp=sharing';
 
 const formationData: CurriculumProps[] = [
   {
@@ -77,7 +77,7 @@ export const CurriculumPage = observer(() => {
   return (
     <AnimatedPage direction={store.routePosition}>
       <Group> <Title>Curriculum</Title>
-        <ActionIcon
+        {(URL_CV !== undefined && URL_CV !== '') ? <ActionIcon
           size={42}
           onClick={() =>
             window.open(
@@ -94,7 +94,7 @@ export const CurriculumPage = observer(() => {
                 height: rem(24),
               }}
           />
-        </ActionIcon>
+                                                   </ActionIcon> : null}
       </Group>
 
       <CategoryTitle title="Formation" />
