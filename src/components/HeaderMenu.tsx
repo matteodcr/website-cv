@@ -20,7 +20,8 @@ export default function HeaderMenu() {
     useEffect(() => {
         const updateActiveButtonIndex = () => {
             const currentPath = window.location.pathname;
-            const foundIndex = Object.keys(routes).findIndex((key) => routes[key].path === currentPath);
+            const foundIndex = Object.keys(routes).findIndex(
+                (key) => routes[key].path === currentPath);
             setActive(foundIndex);
         };
 
