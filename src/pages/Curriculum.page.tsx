@@ -97,7 +97,7 @@ export const CurriculumPage = observer(() => {
                                                    </ActionIcon> : null}
       </Group>
 
-      <CategoryTitle title="Formation" />
+      <CategoryTitle title="Expériences" />
       <Stack>
         <Stack gap="xl">
           {experienceData.map((props, index) => (
@@ -106,7 +106,7 @@ export const CurriculumPage = observer(() => {
         </Stack>
       </Stack>
 
-      <CategoryTitle title="Expériences" />
+      <CategoryTitle title="Formation" />
 
       <Stack>
         <Stack gap="xl">
