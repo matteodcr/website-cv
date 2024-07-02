@@ -1,4 +1,4 @@
-import { IconBrandLinkedin, IconBulb, IconHome, IconMail, IconRoute } from '@tabler/icons-react';
+import { IconBrandLinkedin, IconHome, IconMail, IconRoute } from '@tabler/icons-react';
 import React from 'react';
 import WebsiteContent from '@/config/structure';
 
@@ -16,7 +16,6 @@ import sopraBg from '@/assets/experience/sopra-bg.jpg';
 
 import { HomePage } from '@/pages/Home.page';
 import { CurriculumPage } from '@/pages/Curriculum.page';
-import { ProjectPage } from '@/pages/Project.page';
 import { ContactPage } from '@/pages/Contact.page';
 
 const content: WebsiteContent = {
@@ -37,12 +36,6 @@ const content: WebsiteContent = {
             path: '/curriculum',
             element: <CurriculumPage />,
             icon: <IconRoute />,
-        },
-        project: {
-            name: 'Projets',
-            path: '/projects',
-            element: <ProjectPage />,
-            icon: <IconBulb />,
         },
         contact: {
             name: 'Contact',
