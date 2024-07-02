@@ -1,29 +1,17 @@
 import React from 'react';
 import { Button, em, SimpleGrid, Stack, Textarea, TextInput, Title } from '@mantine/core';
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import { useMediaQuery } from '@mantine/hooks';
 import { observer } from 'mobx-react-lite';
-import AnimatedPage from '@/components/AnimatedPage';
-import SocialLink, { SocialLinkProps } from '@/components/SocialLink';
-import { useNavigationStore } from '@/store/Navigation.store';
 
-const socialLinksData: SocialLinkProps[] = [
-  {
-    icon: <IconBrandGithub />,
-    href: 'https://github.com/matteodcr',
-    label: 'Github',
-  },
-  {
-    icon: <IconBrandLinkedin />,
-    href: 'https://www.linkedin.com/in/matteodecorsaire/en?originalSubdomain=ca',
-    label: 'Linkedin',
-  },
-];
+import AnimatedPage from '@/components/AnimatedPage';
+import SocialLink from '@/components/SocialLink';
+import { useNavigationStore } from '@/store/Navigation.store';
+import { getWebsiteContent } from '@/config/structure';
 
 export const ContactPage = observer(() => {
   const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
   const store = useNavigationStore();
-
+  const { socialLinksData } = getWebsiteContent();
   return (
       <AnimatedPage direction={store.routePosition}>
         <Title>Contact</Title>

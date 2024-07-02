@@ -1,13 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Badge, Card, Flex, Group, Stack, Text, Title } from '@mantine/core';
 import styles from '@/components/ProjectCard.module.css';
-
-export interface Technologies {
-  name: string;
-  icon: ReactNode;
-  backgroundColor: string;
-  textColor: string;
-}
+import { Technologies } from '@/config/technologies';
 
 function TechnologiesBadge({ name, icon, backgroundColor, textColor }: Technologies) {
   return (

@@ -2,16 +2,16 @@ import { useMediaQuery } from '@mantine/hooks';
 import { em, Flex, SimpleGrid, Text } from '@mantine/core';
 import { observer } from 'mobx-react-lite';
 import AnimatedPage from '@/components/AnimatedPage';
-import HomeCard, { HomeCardProps } from '@/components/HomeCard';
+import HomeCard from '@/components/HomeCard';
 import { useNavigationStore } from '@/store/Navigation.store';
-
-const data: HomeCardProps[] = [];
+import { getWebsiteContent } from '@/config/structure';
 
 export const HomePage = observer(() => {
-  const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
-  const store = useNavigationStore();
+    const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
+    const store = useNavigationStore();
+    const { homeLinks } = getWebsiteContent();
 
-  return (
+    return (
     <AnimatedPage direction={store.routePosition}>
       <Flex mih={50} gap="sm" justify="center" align="flex-start" direction="column" wrap="wrap">
         <Text c="blue">Bonjour 👋, je suis</Text>
@@ -24,7 +24,7 @@ export const HomePage = observer(() => {
       </Flex>
 
       <SimpleGrid my="sm" cols={isMobile ? 1 : 2}>
-        {data.map((props, index) => (
+        {homeLinks.map((props, index) => (
           <HomeCard key={index} {...props} />
         ))}
       </SimpleGrid>
