@@ -1,6 +1,7 @@
-import { Accordion, ActionIcon, Group, rem, Stack, Title } from '@mantine/core';
+import { Accordion, ActionIcon, em, Group, rem, Stack, Title } from '@mantine/core';
 import { observer } from 'mobx-react-lite';
-import { IconFileTypeDoc } from '@tabler/icons-react';
+import { IconChevronDown, IconFileTypeDoc } from '@tabler/icons-react';
+import { useMediaQuery } from '@mantine/hooks';
 import classes from '@/pages/Curriculum.module.css';
 import AnimatedPage from '@/components/AnimatedPage';
 import CurriculumCard from '@/components/CurriculumCard';
@@ -20,6 +21,7 @@ function CategoryTitle({ title }: categoryTitleProps) {
 }
 export const CurriculumPage = observer(() => {
   const store = useNavigationStore();
+  const isMobile = useMediaQuery(`(max-width: ${em(1500)})`);
 
   const { experienceData, formationData } = getWebsiteContent();
   const { URL_CV } = getWebsiteContent();
@@ -50,7 +52,7 @@ export const CurriculumPage = observer(() => {
       <CategoryTitle title="Expériences" />
       <Stack>
         <Stack gap="xl">
-            <Accordion classNames={classes}>
+            <Accordion classNames={classes} chevron={isMobile ? '' : <IconChevronDown className={classes.icon} />}>
               {experienceData.map((props, index) => (
                   <CurriculumCard key={index} {...props} />
               ))}
@@ -62,7 +64,7 @@ export const CurriculumPage = observer(() => {
 
       <Stack>
         <Stack gap="xl">
-            <Accordion classNames={classes}>
+            <Accordion classNames={classes} chevron={isMobile ? '' : <IconChevronDown className={classes.icon} />}>
           {formationData.map((props, index) => (
               <CurriculumCard key={index} {...props} />
           ))}

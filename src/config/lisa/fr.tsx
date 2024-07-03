@@ -17,12 +17,15 @@ import sopraBg from '@/assets/experience/sopra-bg.jpg';
 import { HomePage } from '@/pages/Home.page';
 import { CurriculumPage } from '@/pages/Curriculum.page';
 import { ContactPage } from '@/pages/Contact.page';
+import notFoundPicture from '@/assets/404.png';
+import logo from '@/assets/logo_lisa.png';
 
 const content: WebsiteContent = {
 
+    pageTitle: 'Lisa D',
     URL_CV: '',
-    logo: '',
-    notFoundPicture: '',
+    logo,
+    notFoundPicture,
 
     routes: {
         home: {

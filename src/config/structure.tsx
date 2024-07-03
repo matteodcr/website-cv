@@ -4,9 +4,8 @@ import { CurriculumProps } from '@/components/CurriculumCard';
 import { ProjectProps } from '@/components/ProjectCard';
 import { HomeCardProps } from '@/components/HomeCard';
 
-import contentMatteo from '@/config/matteo/fr';
-
-// import contentLisa from '@/config/lisa/fr';
+//import contentMatteo from '@/config/matteo/fr';
+import contentLisa from '@/config/lisa/fr';
 
 interface WebsiteContent {
     routes: { [key: string]: Route },
@@ -23,7 +22,7 @@ interface WebsiteContent {
 }
 
 export function getWebsiteContent(): WebsiteContent {
-    return contentMatteo;
+    return contentLisa;
 }
 
 export default WebsiteContent;

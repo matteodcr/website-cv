@@ -33,7 +33,8 @@ export interface CurriculumProps {
   contract?: string;
 }
 
-export default function CurriculumCard({ image, title, description, descriptionList, link, place, date, backgroundImage, contract }: CurriculumProps) {
+export default function CurriculumCard({ image, title, description, descriptionList,
+                                         link, place, date, backgroundImage, contract }: CurriculumProps) {
   const isMobile = useMediaQuery(`(max-width: ${em(1500)})`);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -49,9 +50,12 @@ export default function CurriculumCard({ image, title, description, descriptionL
       <>
         <Accordion.Item value={title} style={{ flex: 1, width: '100%' }}>
           <Accordion.Control>
-            <Flex h="100%" mih={50} gap="md" justify="flex-start" align="flex-start" wrap="revert">
+            <Flex h="100%" direction={isMobile ? 'column' : 'row'} mih={50} gap="md" justify="flex-start" align="flex-start" wrap="revert">
               <BackgroundImage src={backgroundImage} h={isMobile ? 200 : 200} w={isMobile ? '100%' : 200}>
-                <Anchor onClick={goToLink} target="_blank" underline="always">
+                <Anchor
+                    // onClick={goToLink}
+                  target="_blank"
+                  underline="always">
                   <Flex justify="center" align="center" h="100%" style={{ backdropFilter: 'blur(1px) saturate(200%)' }}>
                     <Image
                       src={image}
@@ -73,8 +77,8 @@ export default function CurriculumCard({ image, title, description, descriptionL
                   {title}
                 </Text>
                 <Group>
-                  {contract && <Badge color="black" size="md" radius="sm">{contract}</Badge>}
                   <Text fz={15} lineClamp={1}>
+                    {contract && <Badge color="black" size="md" radius="sm" mr={10}>{contract}</Badge>}
                     {place}
                   </Text>
                 </Group>
@@ -83,20 +87,20 @@ export default function CurriculumCard({ image, title, description, descriptionL
             </Flex>
           </Accordion.Control>
           <Accordion.Panel>
-            <Text py="sm">{description}</Text>
-            <List withPadding>
+            {description && <Text py="sm">{description}</Text>}
+            {descriptionList && <List withPadding>
                 {descriptionList?.map((item) => (
                     <List.Item icon={item.icon} key={item.icon}>{item.description}</List.Item>
                 ))}
-            </List>
+                                </List>}
             <Flex>
               {!isMobile && (
                   <Button
                     onClick={goToLink}
-                    rightSection={<IconOutbound size={14} />}
-                    variant="transparent"
+                    rightSection={<IconOutbound size={16} />}
+                    variant="light"
                     color="rgba(0, 0, 0, 1)"
-                    px={0}
+                    mt={10}
                   >
                     En savoir plus
                   </Button>
