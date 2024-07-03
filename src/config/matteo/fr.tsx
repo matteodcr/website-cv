@@ -67,7 +67,8 @@ const content: WebsiteContent = {
         },
         {
             title: 'Développeur en vision par ordinateur',
-            description: "Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons",
+            description: "Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA " +
+                "pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons",
             link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
             image: fitLogo,
             date: 'De mai à juillet 2023',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, em, SimpleGrid, Stack, Textarea, TextInput, Title } from '@mantine/core';
+import { em, SimpleGrid, Stack, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { observer } from 'mobx-react-lite';
 
@@ -28,24 +28,24 @@ export const ContactPage = observer(() => {
               ))}
             </Stack>
           </Stack>
-          <Stack>
-            <TextInput disabled label="Nom" size={isMobile ? 'lg' : 'md'} placeholder="Votre nom" />
-            <TextInput
-              disabled
-              label="Courriel"
-              size={isMobile ? 'lg' : 'md'}
-              placeholder="Votre email"
-            />
-            <Textarea
-              disabled
-              label="Message"
-              size={isMobile ? 'lg' : 'md'}
-              placeholder="Votre message"
-            />
-            <Button size={isMobile ? 'xl' : 'lg'} disabled>
-              ⚠️ En construction
-            </Button>
-          </Stack>
+          {/*<Stack>*/}
+          {/*  <TextInput disabled label="Nom" size={isMobile ? 'lg' : 'md'} placeholder="Votre nom" />*/}
+          {/*  <TextInput*/}
+          {/*    disabled*/}
+          {/*    label="Courriel"*/}
+          {/*    size={isMobile ? 'lg' : 'md'}*/}
+          {/*    placeholder="Votre email"*/}
+          {/*  />*/}
+          {/*  <Textarea*/}
+          {/*    disabled*/}
+          {/*    label="Message"*/}
+          {/*    size={isMobile ? 'lg' : 'md'}*/}
+          {/*    placeholder="Votre message"*/}
+          {/*  />*/}
+          {/*  <Button size={isMobile ? 'xl' : 'lg'} disabled>*/}
+          {/*    ⚠️ En construction*/}
+          {/*  </Button>*/}
+          {/*</Stack>*/}
         </SimpleGrid>
       </AnimatedPage>
   );

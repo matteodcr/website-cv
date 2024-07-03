@@ -1,6 +1,7 @@
-import { ActionIcon, Group, rem, Stack, Title } from '@mantine/core';
+import { Accordion, ActionIcon, Group, rem, Stack, Title } from '@mantine/core';
 import { observer } from 'mobx-react-lite';
 import { IconFileTypeDoc } from '@tabler/icons-react';
+import classes from '@/pages/Curriculum.module.css';
 import AnimatedPage from '@/components/AnimatedPage';
 import CurriculumCard from '@/components/CurriculumCard';
 import { useNavigationStore } from '@/store/Navigation.store';
@@ -49,9 +50,11 @@ export const CurriculumPage = observer(() => {
       <CategoryTitle title="Expériences" />
       <Stack>
         <Stack gap="xl">
-          {experienceData.map((props, index) => (
-              <CurriculumCard key={index} {...props} />
-          ))}
+            <Accordion classNames={classes}>
+              {experienceData.map((props, index) => (
+                  <CurriculumCard key={index} {...props} />
+              ))}
+            </Accordion>
         </Stack>
       </Stack>
 
@@ -59,9 +62,11 @@ export const CurriculumPage = observer(() => {
 
       <Stack>
         <Stack gap="xl">
+            <Accordion classNames={classes}>
           {formationData.map((props, index) => (
               <CurriculumCard key={index} {...props} />
           ))}
+            </Accordion>
         </Stack>
       </Stack>
     </AnimatedPage>

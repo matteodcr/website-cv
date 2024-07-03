@@ -13002,6 +13002,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-collapsed@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "react-collapsed@npm:4.1.2"
+  dependencies:
+    tiny-warning: "npm:^1.0.3"
+  peerDependencies:
+    react: ^16.9.0 || ^17 || ^18
+    react-dom: ^16.9.0 || ^17 || ^18
+  checksum: 10c0/84dbb615454d19032b62feee8903f65df85b31d6aa104aafe7f7d8f672780e32a050fb02eebc3fe7a3fa05f46c4fa40a01fb767d8b382da29d23295128117a6e
+  languageName: node
+  linkType: hard
+
 "react-colorful@npm:^5.1.2":
   version: 5.6.1
   resolution: "react-colorful@npm:5.6.1"
@@ -15166,6 +15178,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-warning@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "tiny-warning@npm:1.0.3"
+  checksum: 10c0/ef8531f581b30342f29670cb41ca248001c6fd7975ce22122bd59b8d62b4fc84ad4207ee7faa95cde982fa3357cd8f4be650142abc22805538c3b1392d7084fa
+  languageName: node
+  linkType: hard
+
 "tinybench@npm:^2.5.1":
   version: 2.5.1
   resolution: "tinybench@npm:2.5.1"
@@ -16252,6 +16271,7 @@ __metadata:
     prettier: "npm:^3.2.5"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"
+    react-collapsed: "npm:^4.1.2"
     react-dom: "npm:^18.2.0"
     react-icons: "npm:^5.1.0"
     react-map-gl: "npm:^7.1.7"
