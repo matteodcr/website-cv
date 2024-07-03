@@ -67,8 +67,15 @@ const content: WebsiteContent = {
         },
         {
             title: 'Développeur en vision par ordinateur',
-            description: "Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA " +
-                "pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétonsDéveloppement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons",
+            description: "Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons.",
+            descriptionList: [
+                { icon: '🔎', description: 'Détecter les principales failles d’un système existant' },
+                { icon: '📊', description: 'Présenter et mettre en perspective les solutions envisagées' },
+                { icon: '🧑‍💻', description: 'Programmer un système autonome interagissant avec SSH' },
+                { icon: '📖', description: 'Apprendre de nouvelles techniques de vision par ordinateur' },
+                { icon: '🧪', description: 'Prendre part à des expériences afin de délivrer des résultats à un client' },
+
+            ],
             link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
             image: fitLogo,
             date: 'De mai à juillet 2023',
@@ -82,6 +89,13 @@ const content: WebsiteContent = {
         {
             title: 'Maitrise en génie logiciel',
             description: '',
+            descriptionList: [
+                { icon: '🏗️', description: 'Architecture logicielle' },
+                { icon: '📋', description: 'Exigences et spécifications de systèmes logiciels' },
+                { icon: '🧪', description: 'Vérification et assurance qualité de logiciels' },
+                { icon: '🤖', description: "Génie logiciel pour l'Intelligence Artificielle" },
+                { icon: '📊', description: 'Gestion de projet en génie logiciel' },
+            ],
             link: 'https://www.etsmtl.ca/etude/deuxieme-cycle/maitrise-genie-logiciel',
             image: etsLogo,
             date: 'Depuis 2023',
@@ -91,6 +105,12 @@ const content: WebsiteContent = {
         {
             title: 'Ingénieur en Informatique',
             description: '',
+            descriptionList: [
+                { icon: '👨‍💻', description: 'Logiciel (Informatique fondamentale, Algorithmique et programmation, Génie logiciel, Bases de données)' },
+                { icon: '🖥️', description: 'Matériel (Architecture matérielle, Traitement du signal, Communications, Informatique mobile)' },
+                { icon: '🌐', description: 'Systèmes et réseaux (Réseaux, Protocoles, Intergiciels, Systèmes répartis)' },
+                { icon: '🎥', description: 'Multimédia (Interactions homme-machine, Communication langagière, Recherche d’informations, Synthèse d’images)' },
+            ],
             link: 'https://polytech.grenoble-inp.fr/fr/formations/informatique-1',
             image: polytechLogo,
             date: 'Depuis 2021',

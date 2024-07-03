@@ -1,9 +1,26 @@
-import { Accordion, Anchor, BackgroundImage, Badge, Button, em, Flex, Group, Image, Stack, Text } from '@mantine/core';
+import {
+  Accordion,
+  Anchor,
+  BackgroundImage,
+  Badge,
+  Button,
+  em,
+  Flex,
+  Group,
+  Image,
+  List,
+  Stack,
+  Text,
+} from '@mantine/core';
 import React, { useState } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconOutbound } from '@tabler/icons-react';
 import styles from '@/components/CurriculumCard.module.css';
 
+export interface ExperienceListProps {
+  icon: string;
+  description: string;
+}
 export interface CurriculumProps {
   backgroundImage: string;
   image: string;
@@ -11,11 +28,12 @@ export interface CurriculumProps {
   title: string;
   place: string;
   description: string;
+  descriptionList?: ExperienceListProps[];
   link: string;
   contract?: string;
 }
 
-export default function CurriculumCard({ image, title, description, link, place, date, backgroundImage, contract }: CurriculumProps) {
+export default function CurriculumCard({ image, title, description, descriptionList, link, place, date, backgroundImage, contract }: CurriculumProps) {
   const isMobile = useMediaQuery(`(max-width: ${em(1500)})`);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -66,6 +84,11 @@ export default function CurriculumCard({ image, title, description, link, place,
           </Accordion.Control>
           <Accordion.Panel>
             <Text py="sm">{description}</Text>
+            <List withPadding>
+                {descriptionList?.map((item) => (
+                    <List.Item icon={item.icon} key={item.icon}>{item.description}</List.Item>
+                ))}
+            </List>
             <Flex>
               {!isMobile && (
                   <Button
