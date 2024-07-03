@@ -8,6 +8,9 @@ import { CurriculumPage } from '@/pages/Curriculum.page';
 import { ProjectPage } from '@/pages/Project.page';
 import { ContactPage } from '@/pages/Contact.page';
 
+import notFoundPicture from '@/assets/404.png';
+import logo from '@/assets/logo.png';
+
 import mcnLogo from '@/assets/experience/mcn-logo.jpg';
 import mcnBg from '@/assets/experience/mcn-bg.jpg';
 import fitLogo from '@/assets/experience/fit-logo.jpg';
@@ -21,8 +24,8 @@ const content: WebsiteContent = {
 
     pageTitle: 'Mattéo D',
     URL_CV: 'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit?usp=sharing',
-    logo: '',
-    notFoundPicture: '',
+    logo,
+    notFoundPicture,
 
     routes: {
         home: {

@@ -1,19 +1,23 @@
-import { em, Group } from '@mantine/core';
+import { ActionIcon, em, Group } from '@mantine/core';
 import React from 'react';
 import { useMediaQuery } from '@mantine/hooks';
-import logo from '@/assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 import CustomFloatingIndicator from '@/components/HeaderMenu';
+import { getWebsiteContent } from '@/config/structure';
 
 export default function Header() {
+    const navigate = useNavigate();
     const isMobile = useMediaQuery(`(max-width: ${em(1000)})`);
-
+    const { logo } = getWebsiteContent();
     return (
     <Group justify="space-between">
       <Group justify="flex-start">
-        <img src={logo} width="50px" alt="LOGO" />
+          <ActionIcon onClick={() => navigate('/')} variant="transparent" h="50px" w="50px">
+              <img src={logo} width="50px" height="50px" alt="LOGO" />
+          </ActionIcon>
       </Group>
         {!isMobile &&
-      <CustomFloatingIndicator />}
+            <CustomFloatingIndicator />}
     </Group>
   );
 }

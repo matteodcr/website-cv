@@ -1,16 +1,16 @@
-import { Anchor, Center, Image, Stack, Text, Title } from '@mantine/core';
+import { Button, Center, Image, Stack, Text, Title } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
-
-import notFoundPage from '@/assets/404.png';
+import { getWebsiteContent } from '@/config/structure';
 
 export default function NotFoundPage() {
     const navigate = useNavigate();
+    const { notFoundPicture } = getWebsiteContent();
     return (
         <Stack bg="var(--mantine-color-body)" align="stretch" justify="center" gap="md">
             <Center>
                 <Image
                   w="300"
-                  src={notFoundPage} // use normal <img> attributes as props
+                  src={notFoundPicture} // use normal <img> attributes as props
                 />
             </Center>
             <Center>
@@ -20,9 +20,9 @@ export default function NotFoundPage() {
                 <Text>Désolé, cette page est inexistante</Text>
             </Center>
             <Center>
-                <Anchor onClick={() => navigate('/')} target="_blank">
+                <Button onClick={() => navigate('/')}>
                     Retour
-                </Anchor>
+                </Button>
             </Center>
         </Stack>
     );
