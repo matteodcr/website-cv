@@ -17,6 +17,7 @@ export const ContactPage = observer(() => {
         <Title>Contact</Title>
         <SimpleGrid cols={isMobile ? 1 : 1}>
           <Stack p="md">
+              {/*<MapChart />*/}
             <Stack gap="md">
               {socialLinksData.map((socialLink, index) => (
                   <SocialLink
