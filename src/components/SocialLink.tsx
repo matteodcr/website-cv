@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionIcon, Anchor, Group } from '@mantine/core';
+import { Button, Group } from '@mantine/core';
 
 export interface SocialLinkProps {
   icon: React.ReactNode;
@@ -13,12 +13,9 @@ export default function SocialLink({ icon, href, label }: SocialLinkProps) {
 
   return (
     <Group>
-      <ActionIcon variant="white" color="rgba(0, 0, 0, 1)" size="xl" radius="xs" onClick={handleClick}>
-        {icon}
-      </ActionIcon>
-      <Anchor href={href} target="_blank">
-        {label}
-      </Anchor>
+        <Button onClick={handleClick} variant="subtle" color="rgba(0, 0, 0, 1)" leftSection={icon}>
+            {label}
+        </Button>
     </Group>
   );
 }

@@ -12,7 +12,7 @@ export function Layout({ children }: LayoutProps) {
   const isMobile = useMediaQuery(`(max-width: ${em(1000)})`);
   return (
     <Stack p="md" mx={isMobile ? 0 : '20%'} pb={80}>
-      {!isMobile && <Header />}
+       <Header />
       {children}
       {isMobile && <Footer />}
     </Stack>

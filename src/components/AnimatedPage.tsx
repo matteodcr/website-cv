@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
+import { getWebsiteContent } from '@/config/structure';
+import getCurrentRoute from '@/utils/getCurrentRoute';
 
 interface AnimatedPageProps {
   children: ReactNode;
@@ -8,8 +10,9 @@ interface AnimatedPageProps {
 
 const AnimatedPage = ({ children, direction }: AnimatedPageProps) => {
   const customEase = [0.6, 0.05, 0.19, 1]; // Courbe de Bezier personnalisée
+  const location = window.location.pathname;
+  document.title = `${getWebsiteContent().pageTitle} · ${getCurrentRoute(getWebsiteContent().routes, location)?.name}`;
 
-  // Définir les animations en fonction de la direction
   const animations = {
     initial: {
       x: direction === 'left' ? '-100%' : '100%',

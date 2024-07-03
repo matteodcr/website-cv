@@ -16,6 +16,7 @@ interface WebsiteContent {
     projectData: ProjectProps[],
     socialLinksData: SocialLinkProps[],
 
+    pageTitle: string,
     logo: string,
     notFoundPicture: string,
     URL_CV: string

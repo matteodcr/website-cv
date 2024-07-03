@@ -19,6 +19,7 @@ import polytechBg from '@/assets/experience/polytech-bg.jpg';
 
 const content: WebsiteContent = {
 
+    pageTitle: 'Mattéo D',
     URL_CV: 'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit?usp=sharing',
     logo: '',
     notFoundPicture: '',
