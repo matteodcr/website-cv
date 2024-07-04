@@ -33,6 +33,7 @@
     "react-map-gl": "^7.1.7",
     "react-router-dom": "^6.22.3",
     "react-simple-maps": "^3.0.0",
+    "react-slide-routes": "^3.0.3",
     "release-it": "^17.2.1",
     "tabler": "1.0.0-alpha.8"
   },
@@ -74,7 +75,7 @@
     "storybook-dark-mode": "^3.0.3",
     "stylelint": "^16.2.1",
     "stylelint-config-standard-scss": "^13.0.0",
-    "typescript": "^5.4.2",
+    "typescript": "^5.5.3",
     "vite": "^5.2.10",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.5.2"

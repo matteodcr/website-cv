@@ -13,9 +13,9 @@ export default function SocialLink({ icon, href, label }: SocialLinkProps) {
 
   return (
     <Group>
-        <Button onClick={handleClick} variant="subtle" color="rgba(0, 0, 0, 1)" leftSection={icon}>
-            {label}
-        </Button>
+      <Button onClick={handleClick} variant="subtle" color="rgba(0, 0, 0, 1)" leftSection={icon}>
+        {label}
+      </Button>
     </Group>
   );
 }
