@@ -7,11 +7,15 @@ import { Pages } from '@/Router';
 import CustomLoader from '@/components/CustomLoader';
 
 import '@/App.module.css';
+import { getWebsiteContent } from '@/config/structure';
+import getCurrentRoute from '@/utils/getCurrentRoute';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const { pageTitle, routes } = getWebsiteContent();
+    document.title = `${pageTitle} · ${getCurrentRoute(routes, window.location.pathname)?.name}`;
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 0);
