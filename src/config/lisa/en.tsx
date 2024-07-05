@@ -1,6 +1,5 @@
 import { IconBrandLinkedin, IconHome, IconMail, IconRoute } from '@tabler/icons-react';
 import React from 'react';
-import WebsiteContent from '@/config/structure';
 
 import polytechLogo from '@/assets/experience/polytech-logo.png';
 import iaeLogo from '@/assets/experience/iae-logo.png';
@@ -20,18 +19,18 @@ import { ContactPage } from '@/pages/Contact.page';
 import notFoundPicture from '@/assets/404.png';
 import logo from '@/assets/logo_lisa.png';
 
-const content: WebsiteContent = {
+const content = {
   pageTitle: 'Lisa D',
   URL_CV: '',
   logo,
   notFoundPicture,
-  introSentence: 'Bonjour 👋, je suis',
+  introSentence: 'Hello 👋, I am',
   fullName: 'Lisa Decorsaire',
   position: 'Business Analyst',
 
   routes: {
     home: {
-      name: 'Bonjour',
+      name: 'Home',
       path: '/',
       element: <HomePage />,
       icon: <IconHome />,
@@ -59,51 +58,51 @@ const content: WebsiteContent = {
   ],
   experienceData: [
     {
-      title: 'Business Analyst / Experte fonctionnelle (MOE)',
+      title: 'Business Analyst / Functional Expert (MOE)',
       description: '',
-      link: 'https://www.soprasteria.com/fr/secteurs-activite/assurance-protection-sociale',
+      link: 'https://www.soprasteria.com/en/sectors/insurance-social-protection',
       image: sopraLogo,
-      date: 'Depuis avril 2019',
+      date: 'Since April 2019',
       place: 'Sopra Steria, Grenoble, France',
       backgroundImage: sopraBg,
     },
     {
-      title: "Développement d'une application mobile",
+      title: 'Development of a Mobile Application',
       description: '',
       link: 'https://www.hug.ch/',
       image: hugLogo,
-      date: 'De mai à août 2018',
-      place: 'Hôpitaux Universitaires Genève, Suisse',
+      date: 'May to August 2018',
+      place: 'Hôpitaux Universitaires Genève, Switzerland',
       backgroundImage: hugBg,
-      contract: 'Stage',
+      contract: 'Internship',
     },
     {
-      title: "Observation de l'équipe médicale",
+      title: 'Observation of the Medical Team',
       description: '',
       link: 'https://www.chu-grenoble.fr/',
       image: chuLogo,
       date: '2017',
       place: 'Centre Hospitalier Universitaire de Grenoble, France',
       backgroundImage: chuBg,
-      contract: 'Stage',
+      contract: 'Internship',
     },
   ],
   formationData: [
     {
-      title: 'Management et Administration des Entreprises (MAE)',
+      title: 'Management and Administration of Enterprises (MAE)',
       description: '',
-      link: 'https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-management-et-administration-des-entreprises-IDIV4XI5.html',
+      link: 'https://formations.univ-grenoble-alpes.fr/en/catalog-2021/master-XB/master-management-et-administration-des-entreprises-IDIV4XI5.html',
       image: iaeLogo,
-      date: 'De 2018 à 2020',
+      date: '2018 to 2020',
       place: 'IAE Grenoble INP-UGA, France',
       backgroundImage: iaeBg,
     },
     {
-      title: "Ingénieure en Technologies de l'Information pour la Santé",
+      title: 'Engineer in Information Technology for Health',
       description: '',
-      link: 'https://polytech.grenoble-inp.fr/fr/formations/technologies-de-linformation-pour-la-sante-1#page-presentation',
+      link: 'https://polytech.grenoble-inp.fr/en/programs/information-technology-for-health-1#page-presentation',
       image: polytechLogo,
-      date: 'De 2016 à 2019',
+      date: '2016 to 2019',
       place: 'Polytech Grenoble - INP UGA, France',
       backgroundImage: polytechBg,
     },
@@ -116,6 +115,6 @@ const content: WebsiteContent = {
       label: 'Linkedin',
     },
   ],
-} as WebsiteContent;
+};
 
 export default content;

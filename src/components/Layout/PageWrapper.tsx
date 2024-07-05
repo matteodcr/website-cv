@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { getWebsiteContent } from '@/config/structure';
 import getCurrentRoute from '@/utils/getCurrentRoute';
 
-const PageWrapper = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+const PageWrapper = ({ children }: Props) => {
   useEffect(() => {
     const { pageTitle, routes } = getWebsiteContent();
     document.title = `${pageTitle} · ${getCurrentRoute(routes, window.location.pathname)?.name}`;

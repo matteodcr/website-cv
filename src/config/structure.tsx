@@ -1,13 +1,55 @@
-import { Route } from '@/Router';
-import { SocialLinkProps } from '@/components/SocialLink';
-import { CurriculumProps } from '@/components/CurriculumCard';
-import { ProjectProps } from '@/components/ProjectCard';
-import { HomeCardProps } from '@/components/HomeCard';
+import React, { ReactNode } from 'react';
 
-import contentMatteo from '@/config/matteo/fr';
+import { Technologies } from '@/config/technologies';
+import contentLanguageGroupMatteo from '@/config/matteo/group';
+import contentLanguageGroupLisa from '@/config/lisa/group';
 
-// import contentLisa from '@/config/lisa/fr';
+export interface Route {
+  path: string;
+  name: string;
+  element: React.ReactNode;
+  icon: ReactNode;
+}
 
+export interface SocialLinkProps {
+  icon: React.ReactNode;
+  href: string;
+  label: string;
+}
+
+export interface HomeCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  link: string;
+}
+
+export interface ExperienceListProps {
+  icon: string;
+  description: string;
+}
+
+export interface CurriculumProps {
+  backgroundImage: string;
+  image: string;
+  date: string;
+  title: string;
+  place: string;
+  description: string;
+  descriptionList?: ExperienceListProps[];
+  link: string;
+  contract?: string;
+}
+export interface ProjectProps {
+  name: string;
+  font?: string;
+  fontColor: string;
+  description: string;
+  link: string;
+  image?: string;
+  backgroundColor?: string;
+  technologies: Technologies[];
+}
 interface WebsiteContent {
   routes: { [key: string]: Route };
   homeLinks: HomeCardProps[];
@@ -20,10 +62,24 @@ interface WebsiteContent {
   logo: string;
   notFoundPicture: string;
   URL_CV: string;
+  introSentence: string;
+  fullName: string;
+  position: string;
 }
 
+export interface WebsiteContentLanguageGroup {
+  fr: WebsiteContent;
+  en?: WebsiteContent;
+}
+
+const users: { [key: string]: WebsiteContentLanguageGroup } = {
+  matteo: contentLanguageGroupMatteo,
+  lisa: contentLanguageGroupLisa,
+};
+
 export function getWebsiteContent(): WebsiteContent {
-  return contentMatteo;
+  const { language } = navigator;
+  return users[import.meta.env.VITE_TO_BUILD][language.substring(0, 2)];
 }
 
 export default WebsiteContent;

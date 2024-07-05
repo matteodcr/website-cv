@@ -26,7 +26,6 @@ export const CurriculumPage = observer(() => {
   return (
     <>
       <Group>
-        {' '}
         <Title>Curriculum</Title>
         {URL_CV !== undefined && URL_CV !== '' ? (
           <ActionIcon

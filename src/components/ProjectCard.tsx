@@ -2,6 +2,7 @@ import React from 'react';
 import { Badge, Card, Flex, Group, Stack, Text, Title } from '@mantine/core';
 import styles from '@/components/ProjectCard.module.css';
 import { Technologies } from '@/config/technologies';
+import { ProjectProps } from '@/config/structure';
 
 function TechnologiesBadge({ name, icon, backgroundColor, textColor }: Technologies) {
   return (
@@ -22,17 +23,6 @@ function TechnologiesBadge({ name, icon, backgroundColor, textColor }: Technolog
       </Flex>
     </Badge>
   );
-}
-
-export interface ProjectProps {
-  name: string;
-  font?: string;
-  fontColor: string;
-  description: string;
-  link: string;
-  image?: string;
-  backgroundColor?: string;
-  technologies: Technologies[];
 }
 
 export default function ProjectCard({

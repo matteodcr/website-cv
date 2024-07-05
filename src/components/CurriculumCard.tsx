@@ -16,22 +16,7 @@ import React, { useState } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconOutbound } from '@tabler/icons-react';
 import styles from '@/components/CurriculumCard.module.css';
-
-export interface ExperienceListProps {
-  icon: string;
-  description: string;
-}
-export interface CurriculumProps {
-  backgroundImage: string;
-  image: string;
-  date: string;
-  title: string;
-  place: string;
-  description: string;
-  descriptionList?: ExperienceListProps[];
-  link: string;
-  contract?: string;
-}
+import { CurriculumProps } from '@/config/structure';
 
 export default function CurriculumCard({
   image,

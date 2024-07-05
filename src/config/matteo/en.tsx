@@ -7,8 +7,11 @@ import {
   IconRoute,
 } from '@tabler/icons-react';
 import React from 'react';
-import WebsiteContent from '@/config/structure';
-import technologies from '@/config/technologies';
+import WebsiteContent from '@/config/structure'; // Assuming this defines the structure of your website content
+import { HomePage } from '@/pages/Home.page';
+import { CurriculumPage } from '@/pages/Curriculum.page';
+import { ProjectPage } from '@/pages/Project.page';
+import { ContactPage } from '@/pages/Contact.page';
 
 import notFoundPicture from '@/assets/404.png';
 import logo from '@/assets/logo.png';
@@ -21,24 +24,24 @@ import etsLogo from '@/assets/experience/ets-logo.png';
 import etsBg from '@/assets/experience/ets-bg.png';
 import polytechLogo from '@/assets/experience/polytech-logo.png';
 import polytechBg from '@/assets/experience/polytech-bg.jpg';
-import { HomePage } from '@/pages/Home.page';
-import { CurriculumPage } from '@/pages/Curriculum.page';
-import { ProjectPage } from '@/pages/Project.page';
-import { ContactPage } from '@/pages/Contact.page';
 
+import technologies from '@/config/technologies'; // Assuming this defines technologies used in your projects
+
+// Define the content structure for your website
 const content: WebsiteContent = {
   fullName: 'Mattéo Decorsaire',
-  introSentence: 'Bonjour 👋, je suis',
-  position: 'Etudiant en informatique et en génie logiciel',
+  introSentence: 'Hello 👋, I am',
+  position: 'Student in Computer Science and Software Engineering',
   pageTitle: 'Mattéo D',
   URL_CV:
     'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit?usp=sharing',
   logo,
   notFoundPicture,
 
+  // Define navigation routes
   routes: {
     home: {
-      name: 'Bonjour',
+      name: 'Hello',
       path: '/',
       element: <HomePage />,
       icon: <IconHome />,
@@ -50,7 +53,7 @@ const content: WebsiteContent = {
       icon: <IconRoute />,
     },
     project: {
-      name: 'Projets',
+      name: 'Projects',
       path: '/projects',
       element: <ProjectPage />,
       icon: <IconBulb />,
@@ -62,95 +65,101 @@ const content: WebsiteContent = {
       icon: <IconMail />,
     },
   },
-  homeLinks: [],
+
+  homeLinks: [], // Assuming this would contain any additional links on the home page
+
+  // Define experience data
   experienceData: [
     {
-      title: 'Conseiller en IA',
+      title: 'AI Advisor',
       description: '',
       link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
       image: mcnLogo,
-      date: 'Depuis mai 2024',
-      place: 'CEI3A, Ministère de la Cybersécurité et du Numérique du Québec, Montréal, Canada',
-      contract: 'Stage',
+      date: 'Since May 2024',
+      place: 'CEI3A, Québec Ministry of Cybersecurity and Digital Affairs, Montreal, Canada',
+      contract: 'Internship',
       backgroundImage: mcnBg,
     },
     {
-      title: 'Développeur en vision par ordinateur',
+      title: 'Computer Vision Developer',
       description:
-        "Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons.",
+        'Developing an AI-assisted autonomous camera system for pedestrian path detection.',
       descriptionList: [
-        { icon: '🔎', description: 'Détecter les principales failles d’un système existant' },
-        { icon: '📊', description: 'Présenter et mettre en perspective les solutions envisagées' },
-        { icon: '🧑‍💻', description: 'Programmer un système autonome interagissant avec SSH' },
-        { icon: '📖', description: 'Apprendre de nouvelles techniques de vision par ordinateur' },
+        { icon: '🔎', description: 'Detect major flaws in an existing system' },
+        { icon: '📊', description: 'Present and contextualize proposed solutions' },
+        { icon: '🧑‍💻', description: 'Program an autonomous system interacting with SSH' },
+        { icon: '📖', description: 'Learn new computer vision techniques' },
         {
           icon: '🧪',
-          description: 'Prendre part à des expériences afin de délivrer des résultats à un client',
+          description: 'Participate in experiments to deliver results to a client',
         },
       ],
       link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
       image: fitLogo,
-      date: 'De mai à juillet 2023',
-      place: 'ImproLab - FIT CTU, Prague, Tchéquie',
-      contract: 'Stage',
-
+      date: 'May to July 2023',
+      place: 'ImproLab - FIT CTU, Prague, Czech Republic',
+      contract: 'Internship',
       backgroundImage: fitBg,
     },
   ],
+
+  // Define education data
   formationData: [
     {
-      title: 'Maitrise en génie logiciel',
+      title: 'Master’s in Software Engineering',
       description: '',
       descriptionList: [
-        { icon: '🏗️', description: 'Architecture logicielle' },
-        { icon: '📋', description: 'Exigences et spécifications de systèmes logiciels' },
-        { icon: '🧪', description: 'Vérification et assurance qualité de logiciels' },
-        { icon: '🤖', description: "Génie logiciel pour l'Intelligence Artificielle" },
-        { icon: '📊', description: 'Gestion de projet en génie logiciel' },
+        { icon: '🏗️', description: 'Software Architecture' },
+        { icon: '📋', description: 'Software System Requirements and Specifications' },
+        { icon: '🧪', description: 'Software Verification and Quality Assurance' },
+        { icon: '🤖', description: 'Software Engineering for Artificial Intelligence' },
+        { icon: '📊', description: 'Project Management in Software Engineering' },
       ],
-      link: 'https://www.etsmtl.ca/etude/deuxieme-cycle/maitrise-genie-logiciel',
+      link: 'https://www.etsmtl.ca/en/studies/graduate/master-software-engineering',
       image: etsLogo,
-      date: 'Depuis 2023',
-      place: 'ETS Montréal, Canada',
+      date: 'Since 2023',
+      place: 'ETS Montreal, Canada',
       backgroundImage: etsBg,
     },
     {
-      title: 'Ingénieur en Informatique',
+      title: 'Computer Engineer',
       description: '',
       descriptionList: [
         {
           icon: '👨‍💻',
           description:
-            'Logiciel (Informatique fondamentale, Algorithmique et programmation, Génie logiciel, Bases de données)',
+            'Software (Fundamental Computer Science, Algorithmics and Programming, Software Engineering, Databases)',
         },
         {
           icon: '🖥️',
           description:
-            'Matériel (Architecture matérielle, Traitement du signal, Communications, Informatique mobile)',
+            'Hardware (Hardware Architecture, Signal Processing, Communications, Mobile Computing)',
         },
         {
           icon: '🌐',
-          description: 'Systèmes et réseaux (Réseaux, Protocoles, Intergiciels, Systèmes répartis)',
+          description:
+            'Systems and Networks (Networks, Protocols, Middleware, Distributed Systems)',
         },
         {
           icon: '🎥',
           description:
-            'Multimédia (Interactions homme-machine, Communication langagière, Recherche d’informations, Synthèse d’images)',
+            'Multimedia (Human-Computer Interaction, Language Communication, Information Retrieval, Image Synthesis)',
         },
       ],
-      link: 'https://polytech.grenoble-inp.fr/fr/formations/informatique-1',
+      link: 'https://polytech.grenoble-inp.fr/en/programs/computer-science',
       image: polytechLogo,
-      date: 'Depuis 2021',
+      date: 'Since 2021',
       place: 'Polytech Grenoble - INP UGA, France',
       backgroundImage: polytechBg,
     },
   ],
+
+  // Define project data
   projectData: [
     {
-      description: 'Application web de secret santa pour des pizzas',
+      description: 'Web application for secret santa pizza parties',
       link: 'https://github.com/matteodcr/santa-pizza',
       name: '🍕 Pizza Party',
-      // image: pizzaProject,
       backgroundColor: '#c7817c',
       technologies: [
         technologies.nestjs,
@@ -158,30 +167,27 @@ const content: WebsiteContent = {
         technologies.react,
         technologies.typescript,
       ],
-      //font: 'Titan One',
       fontColor: '#be1931',
     },
     {
-      description: 'Application mobile de géolocalisation GNSS RTK',
+      description: 'Mobile application for GNSS RTK geolocation',
       link: 'https://github.com/matteodcr/TurtleRTK',
       name: '🐢 Turtle RTK',
-      //image: turtleProject,
       backgroundColor: '#a08cbf',
       technologies: [technologies.reactNative, technologies.typescript],
-      //font: 'Fjalla One',
       fontColor: '#6a3de8',
     },
     {
-      description: 'Jeu coopératif basé sur des automates',
+      description: 'Cooperative game based on automatons',
       link: 'https://github.com/matteodcr/Patatruck',
       name: '🥔 Patatruck',
-      //image: patatruckProject,
       backgroundColor: '#ac905f',
       technologies: [technologies.java],
-      //font: 'Fugaz One',
       fontColor: '#ffc000',
     },
   ],
+
+  // Define social links data
   socialLinksData: [
     {
       icon: <IconBrandGithub />,

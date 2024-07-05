@@ -35,7 +35,7 @@ export default function HeaderMenu() {
       className={classes.control}
       ref={setControlRef(index)}
       onClick={() => {
-        navigate(routes[key].path);
+        navigate(`${routes[key].path}`);
         setActive(index);
       }}
       mod={{ active: active === index }}

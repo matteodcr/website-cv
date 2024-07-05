@@ -6,17 +6,17 @@ import { getWebsiteContent } from '@/config/structure';
 
 export const HomePage = observer(() => {
   const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
-  const { homeLinks } = getWebsiteContent();
+  const { homeLinks, introSentence, fullName, position } = getWebsiteContent();
 
   return (
     <>
       <Flex mih={50} gap="sm" justify="center" align="flex-start" direction="column" wrap="wrap">
-        <Text c="blue">Bonjour 👋, je suis</Text>
+        <Text c="blue">{introSentence}</Text>
         <Flex mih={50} gap={0} justify="center" align="flex-start" direction="column" wrap="wrap">
           <Text fw={700} fz={35}>
-            Mattéo Decorsaire
+            {fullName}
           </Text>
-          <Text c="dimmed">Etudiant en informatique et en génie logiciel</Text>
+          <Text c="dimmed">{position}</Text>
         </Flex>
       </Flex>
 
