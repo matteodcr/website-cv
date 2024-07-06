@@ -1,4 +1,4 @@
-import { Route } from '@/Router';
+import { Route } from '@/config/structure';
 
 function getCurrentRoute(routes: { [key: string]: Route }, path: string): Route | null {
   for (const key in routes) {

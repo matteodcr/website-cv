@@ -71,10 +71,7 @@ interface WebsiteContent {
   position: string;
 }
 
-export interface WebsiteContentLanguageGroup {
-  fr: WebsiteContent;
-  en?: WebsiteContent;
-}
+export type WebsiteContentLanguageGroup = { [key: string]: WebsiteContent };
 
 const users: { [key: string]: WebsiteContentLanguageGroup } = {
   matteo: contentLanguageGroupMatteo,
@@ -82,7 +79,31 @@ const users: { [key: string]: WebsiteContentLanguageGroup } = {
 };
 
 export function getWebsiteContent(): WebsiteContent {
-  return users[import.meta.env.VITE_TO_BUILD][getLanguage()];
+  const userToBuild = import.meta.env.VITE_TO_BUILD;
+  if (userToBuild === undefined) {
+    throw new Error('VITE_TO_BUILD is not defined');
+  }
+  let result: WebsiteContent = {
+    URL_CV: '',
+    curriculumData: [],
+    fullName: '',
+    homeLinks: [],
+    introSentence: '',
+    logo: '',
+    notFoundPicture: '',
+    pageTitle: '',
+    position: '',
+    projectData: [],
+    routes: {},
+    socialLinksData: [],
+  };
+  for (const user of Object.keys(users)) {
+    if (user === userToBuild) {
+      result = users[user][getLanguage()] as WebsiteContent;
+      return result;
+    }
+  }
+  return result;
 }
 
 export default WebsiteContent;

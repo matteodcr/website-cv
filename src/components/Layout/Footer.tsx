@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Center, Flex, Group, Text } from '@mantine/core';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Route } from '@/Router';
 import { getWebsiteContent } from '@/config/structure';
 
-interface FooterButtonProps extends Route {
+interface FooterButtonProps {
   keyRoute: string;
   indexRoute: number;
   setActiveRoute: (route: string) => void;
   activeRoute: string;
+  name: string;
+  icon: React.ReactNode;
 }
 
 function FooterButton({ icon, name, keyRoute, setActiveRoute, activeRoute }: FooterButtonProps) {

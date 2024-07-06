@@ -30,7 +30,7 @@ import { ContactPage } from '@/pages/Contact.page';
 const content: WebsiteContent = {
   fullName: 'Mattéo Decorsaire',
   introSentence: 'Bonjour 👋, je suis',
-  position: 'Etudiant en informatique et en génie logiciel',
+  position: 'Etudiant en génie logiciel',
   pageTitle: 'Mattéo D',
   URL_CV:
     'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit?usp=sharing',
@@ -69,7 +69,7 @@ const content: WebsiteContent = {
       title: 'Expérience',
       data: [
         {
-          title: 'Conseiller en IA',
+          title: 'Développeur en IA',
           description: '',
           link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
           image: mcnLogo,

@@ -32,7 +32,7 @@ import technologies from '@/config/technologies';
 const content: WebsiteContent = {
   fullName: 'Mattéo Decorsaire',
   introSentence: 'Hello 👋, I am',
-  position: 'Student in Computer Science and Software Engineering',
+  position: 'Student in Software Engineering',
   pageTitle: 'Mattéo D',
   URL_CV:
     'https://docs.google.com/document/d/1D-tLcVnSyjpBRY2gj7bouo9WOf_YJR1eCTuDnF-UDBg/edit?usp=sharing',
@@ -75,7 +75,7 @@ const content: WebsiteContent = {
       title: 'Work Experience',
       data: [
         {
-          title: 'AI Advisor',
+          title: 'AI Developer',
           description: '',
           link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
           image: mcnLogo,

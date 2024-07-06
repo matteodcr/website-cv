@@ -1,5 +1,5 @@
 import { useMediaQuery } from '@mantine/hooks';
-import { em, Flex, SimpleGrid, Text } from '@mantine/core';
+import { Center, em, Flex, SimpleGrid, Text, Title } from '@mantine/core';
 import { observer } from 'mobx-react-lite';
 import HomeCard from '@/components/HomeCard';
 import { getWebsiteContent } from '@/config/structure';
@@ -11,7 +11,7 @@ export const HomePage = observer(() => {
   return (
     <>
       <Flex mih={50} justify="center" align="center" direction="column" wrap="wrap">
-        <Text c="blue" size="xl">
+        <Text c="blue" size={isMobile ? 'lg' : 'xl'} align="center">
           {introSentence}
         </Text>
         <Flex
@@ -23,12 +23,14 @@ export const HomePage = observer(() => {
           direction="column"
           wrap="wrap"
         >
-          <Text fw={700} fz={50}>
+          <Text fw={700} fz={isMobile ? 30 : 50}>
             {fullName}
           </Text>
-          <Text c="dimmed" fz={30}>
-            {position}
-          </Text>
+          <Center>
+            <Title fz={isMobile ? 20 : 30} c="dimmed" order={5} textWrap="pretty">
+              {position}
+            </Title>
+          </Center>
         </Flex>
       </Flex>
 
