@@ -117,7 +117,7 @@ export default function CurriculumCard({
               rightSection={<IconOutbound size={16} />}
               variant="light"
               fullWidth={!!isMobile}
-              size={isMobile ? 'lg' : 'sm'}
+              size={isMobile ? 'lg' : 'md'}
               color="rgba(0, 0, 0, 1)"
               mt={10}
             >

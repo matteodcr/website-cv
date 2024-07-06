@@ -5,22 +5,34 @@ import HomeCard from '@/components/HomeCard';
 import { getWebsiteContent } from '@/config/structure';
 
 export const HomePage = observer(() => {
-  const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
+  const isMobile = useMediaQuery(`(max-width: ${em(1500)})`);
   const { homeLinks, introSentence, fullName, position } = getWebsiteContent();
 
   return (
     <>
-      <Flex mih={50} gap="sm" justify="center" align="flex-start" direction="column" wrap="wrap">
-        <Text c="blue">{introSentence}</Text>
-        <Flex mih={50} gap={0} justify="center" align="flex-start" direction="column" wrap="wrap">
-          <Text fw={700} fz={35}>
+      <Flex mih={50} justify="center" align="center" direction="column" wrap="wrap">
+        <Text c="blue" size="xl">
+          {introSentence}
+        </Text>
+        <Flex
+          pt={0}
+          mih={50}
+          gap={0}
+          justify="center"
+          align="center"
+          direction="column"
+          wrap="wrap"
+        >
+          <Text fw={700} fz={50}>
             {fullName}
           </Text>
-          <Text c="dimmed">{position}</Text>
+          <Text c="dimmed" fz={30}>
+            {position}
+          </Text>
         </Flex>
       </Flex>
 
-      <SimpleGrid my="sm" cols={isMobile ? 1 : 2}>
+      <SimpleGrid my="sm" cols={isMobile ? 1 : 1} mx={isMobile ? 0 : '8em'}>
         {homeLinks.map((props, index) => (
           <HomeCard key={index} {...props} />
         ))}
