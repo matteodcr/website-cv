@@ -106,7 +106,7 @@ const content: WebsiteContent = {
   // Define education data
   formationData: [
     {
-      title: 'Master’s in Software Engineering',
+      title: 'Master in Software Engineering',
       description: '',
       descriptionList: [
         { icon: '🏗️', description: 'Software Architecture' },
@@ -115,14 +115,14 @@ const content: WebsiteContent = {
         { icon: '🤖', description: 'Software Engineering for Artificial Intelligence' },
         { icon: '📊', description: 'Project Management in Software Engineering' },
       ],
-      link: 'https://www.etsmtl.ca/en/studies/graduate/master-software-engineering',
+      link: 'https://www.etsmtl.ca/en/study/deuxieme-cycle/maitrise-genie-logiciel',
       image: etsLogo,
       date: 'Since 2023',
       place: 'ETS Montreal, Canada',
       backgroundImage: etsBg,
     },
     {
-      title: 'Computer Engineer',
+      title: "Engineer's Degree - Computer Networks and Multimedia Communication",
       description: '',
       descriptionList: [
         {
@@ -146,7 +146,7 @@ const content: WebsiteContent = {
             'Multimedia (Human-Computer Interaction, Language Communication, Information Retrieval, Image Synthesis)',
         },
       ],
-      link: 'https://polytech.grenoble-inp.fr/en/programs/computer-science',
+      link: 'https://polytech.grenoble-inp.fr/medias/fichier/info-anglais-2-_1688983286603-pdf?ID_FICHE=16072&INLINE=FALSE',
       image: polytechLogo,
       date: 'Since 2021',
       place: 'Polytech Grenoble - INP UGA, France',

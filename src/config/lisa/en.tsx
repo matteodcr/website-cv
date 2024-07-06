@@ -60,7 +60,7 @@ const content = {
     {
       title: 'Business Analyst / Functional Expert (MOE)',
       description: '',
-      link: 'https://www.soprasteria.com/en/sectors/insurance-social-protection',
+      link: 'https://www.soprasteria.com/industries/insurance-social',
       image: sopraLogo,
       date: 'Since April 2019',
       place: 'Sopra Steria, Grenoble, France',
@@ -69,7 +69,7 @@ const content = {
     {
       title: 'Development of a Mobile Application',
       description: '',
-      link: 'https://www.hug.ch/',
+      link: 'https://www.hug.ch/en',
       image: hugLogo,
       date: 'May to August 2018',
       place: 'Hôpitaux Universitaires Genève, Switzerland',
@@ -79,7 +79,7 @@ const content = {
     {
       title: 'Observation of the Medical Team',
       description: '',
-      link: 'https://www.chu-grenoble.fr/',
+      link: 'https://www.chu-grenoble.fr/english',
       image: chuLogo,
       date: '2017',
       place: 'Centre Hospitalier Universitaire de Grenoble, France',
@@ -89,7 +89,7 @@ const content = {
   ],
   formationData: [
     {
-      title: 'Management and Administration of Enterprises (MAE)',
+      title: 'Master in Corporate management and administration',
       description: '',
       link: 'https://formations.univ-grenoble-alpes.fr/en/catalog-2021/master-XB/master-management-et-administration-des-entreprises-IDIV4XI5.html',
       image: iaeLogo,
@@ -100,7 +100,7 @@ const content = {
     {
       title: 'Engineer in Information Technology for Health',
       description: '',
-      link: 'https://polytech.grenoble-inp.fr/en/programs/information-technology-for-health-1#page-presentation',
+      link: 'https://polytech.grenoble-inp.fr/medias/fichier/tis-anglais_1688986752958-pdf?ID_FICHE=16078&INLINE=FALSE',
       image: polytechLogo,
       date: '2016 to 2019',
       place: 'Polytech Grenoble - INP UGA, France',

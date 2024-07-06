@@ -5,8 +5,11 @@ import { HomeCardProps } from '@/config/structure';
 
 export default function HomeCard({ icon, title, description, link }: HomeCardProps) {
   const navigate = useNavigate();
+  function goToLink(link: string) {
+    window.open(link, '_blank', 'noopener noreferrer');
+  }
   return (
-    <Card className={styles.card} shadow="sm" radius="md" withBorder onClick={() => navigate(link)}>
+    <Card className={styles.card} shadow="sm" radius="md" withBorder onClick={() => goToLink(link)}>
       <Flex mih={50} gap="xs" justify="flex-start" align="center" direction="row" wrap="revert">
         {icon}
         <Flex mih={50} justify="center" align="flex-start" direction="column" wrap="wrap">

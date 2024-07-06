@@ -73,8 +73,7 @@ export default function CurriculumCard({
                     src={image}
                     className={styles.card}
                     alt="front"
-                    h={100}
-                    w={100}
+                    w={120}
                     onLoad={handleImageLoad}
                     style={{ opacity: imageLoaded ? 1 : 0 }}
                   />
