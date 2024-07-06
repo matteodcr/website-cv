@@ -9,7 +9,6 @@ export default function HeaderMenu() {
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
   const [controlsRefs, setControlsRefs] = useState<Record<string, HTMLButtonElement | null>>({});
   const [active, setActive] = useState(0);
-
   const { routes } = getWebsiteContent();
 
   const setControlRef = (index: number) => (node: HTMLButtonElement) => {
@@ -47,7 +46,6 @@ export default function HeaderMenu() {
   return (
     <div className={classes.root} ref={setRootRef}>
       {controls}
-
       <FloatingIndicator
         target={controlsRefs[active]}
         parent={rootRef}

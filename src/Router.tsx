@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import SlideRoutes from 'react-slide-routes';
 import PageWrapper from '@/components/Layout/PageWrapper';
 import NotFoundPage from '@/pages/NotFound.page';
 import { getWebsiteContent } from '@/config/structure';
@@ -17,5 +18,5 @@ export const Pages = () => {
 
   routeElements.push(<Route path="*" element={<NotFoundPage />} key="not-found" />);
 
-  return <Routes>{routeElements}</Routes>;
+  return <SlideRoutes>{routeElements}</SlideRoutes>;
 };

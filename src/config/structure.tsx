@@ -3,6 +3,7 @@ import React, { ReactNode } from 'react';
 import { Technologies } from '@/config/technologies';
 import contentLanguageGroupMatteo from '@/config/matteo/group';
 import contentLanguageGroupLisa from '@/config/lisa/group';
+import { getLanguage } from '@/config/language';
 
 export interface Route {
   path: string;
@@ -78,8 +79,7 @@ const users: { [key: string]: WebsiteContentLanguageGroup } = {
 };
 
 export function getWebsiteContent(): WebsiteContent {
-  const { language } = navigator;
-  return users[import.meta.env.VITE_TO_BUILD][language.substring(0, 2)];
+  return users[import.meta.env.VITE_TO_BUILD][getLanguage()];
 }
 
 export default WebsiteContent;
