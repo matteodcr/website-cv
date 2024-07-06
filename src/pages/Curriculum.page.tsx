@@ -20,7 +20,7 @@ function CategoryTitle({ title }: categoryTitleProps) {
 export const CurriculumPage = observer(() => {
   const isMobile = useMediaQuery(`(max-width: ${em(1500)})`);
 
-  const { experienceData, formationData } = getWebsiteContent();
+  const { curriculumData } = getWebsiteContent();
   const { URL_CV } = getWebsiteContent();
 
   return (
@@ -44,34 +44,23 @@ export const CurriculumPage = observer(() => {
         ) : null}
       </Group>
 
-      <CategoryTitle title="Expériences" />
-      <Stack>
-        <Stack gap="xl">
-          <Accordion
-            classNames={classes}
-            chevron={isMobile ? '' : <IconChevronDown className={classes.icon} />}
-          >
-            {experienceData.map((props, index) => (
-              <CurriculumCard key={index} {...props} />
-            ))}
-          </Accordion>
-        </Stack>
-      </Stack>
-
-      <CategoryTitle title="Formation" />
-
-      <Stack>
-        <Stack gap="xl">
-          <Accordion
-            classNames={classes}
-            chevron={isMobile ? '' : <IconChevronDown className={classes.icon} />}
-          >
-            {formationData.map((props, index) => (
-              <CurriculumCard key={index} {...props} />
-            ))}
-          </Accordion>
-        </Stack>
-      </Stack>
+      {curriculumData.map((section, index) => (
+        <div key={section.title}>
+          <CategoryTitle title={section.title} />
+          <Stack>
+            <Stack gap="xl">
+              <Accordion
+                classNames={classes}
+                chevron={isMobile ? '' : <IconChevronDown className={classes.icon} />}
+              >
+                {section.data.map((props, index) => (
+                  <CurriculumCard key={index} {...props} />
+                ))}
+              </Accordion>
+            </Stack>
+          </Stack>
+        </div>
+      ))}
     </>
   );
 });

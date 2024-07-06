@@ -24,8 +24,9 @@ import etsLogo from '@/assets/experience/ets-logo.png';
 import etsBg from '@/assets/experience/ets-bg.png';
 import polytechLogo from '@/assets/experience/polytech-logo.png';
 import polytechBg from '@/assets/experience/polytech-bg.jpg';
+import bdeLogo from '@/assets/experience/bde_logo.jpg';
 
-import technologies from '@/config/technologies'; // Assuming this defines technologies used in your projects
+import technologies from '@/config/technologies';
 
 // Define the content structure for your website
 const content: WebsiteContent = {
@@ -69,88 +70,110 @@ const content: WebsiteContent = {
   homeLinks: [], // Assuming this would contain any additional links on the home page
 
   // Define experience data
-  experienceData: [
+  curriculumData: [
     {
-      title: 'AI Advisor',
-      description: '',
-      link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
-      image: mcnLogo,
-      date: 'Since May 2024',
-      place: 'CEI3A, Québec Ministry of Cybersecurity and Digital Affairs, Montreal, Canada',
-      contract: 'Internship',
-      backgroundImage: mcnBg,
-    },
-    {
-      title: 'Computer Vision Developer',
-      description:
-        'Developing an AI-assisted autonomous camera system for pedestrian path detection.',
-      descriptionList: [
-        { icon: '🔎', description: 'Detect major flaws in an existing system' },
-        { icon: '📊', description: 'Present and contextualize proposed solutions' },
-        { icon: '🧑‍💻', description: 'Program an autonomous system interacting with SSH' },
-        { icon: '📖', description: 'Learn new computer vision techniques' },
+      title: 'Work Experience',
+      data: [
         {
-          icon: '🧪',
-          description: 'Participate in experiments to deliver results to a client',
+          title: 'AI Advisor',
+          description: '',
+          link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
+          image: mcnLogo,
+          date: 'Since May 2024',
+          place: 'CEI3A, Québec Ministry of Cybersecurity and Digital Affairs, Montreal, Canada',
+          contract: 'Internship',
+          backgroundImage: mcnBg,
+        },
+        {
+          title: 'Computer Vision Developer',
+          description:
+            'Developing an AI-assisted autonomous camera system for pedestrian path detection.',
+          descriptionList: [
+            { icon: '🔎', description: 'Detect major flaws in an existing system' },
+            { icon: '📊', description: 'Present and contextualize proposed solutions' },
+            { icon: '🧑‍💻', description: 'Program an autonomous system interacting with SSH' },
+            { icon: '📖', description: 'Learn new computer vision techniques' },
+            {
+              icon: '🧪',
+              description: 'Participate in experiments to deliver results to a client',
+            },
+          ],
+          link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
+          image: fitLogo,
+          date: 'May to July 2023',
+          place: 'ImproLab - FIT CTU, Prague, Czech Republic',
+          contract: 'Internship',
+          backgroundImage: fitBg,
         },
       ],
-      link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
-      image: fitLogo,
-      date: 'May to July 2023',
-      place: 'ImproLab - FIT CTU, Prague, Czech Republic',
-      contract: 'Internship',
-      backgroundImage: fitBg,
     },
-  ],
 
-  // Define education data
-  formationData: [
     {
-      title: 'Master in Software Engineering',
-      description: '',
-      descriptionList: [
-        { icon: '🏗️', description: 'Software Architecture' },
-        { icon: '📋', description: 'Software System Requirements and Specifications' },
-        { icon: '🧪', description: 'Software Verification and Quality Assurance' },
-        { icon: '🤖', description: 'Software Engineering for Artificial Intelligence' },
-        { icon: '📊', description: 'Project Management in Software Engineering' },
+      title: 'Education',
+      data: [
+        {
+          title: 'Master in Software Engineering',
+          description: '',
+          descriptionList: [
+            { icon: '🏗️', description: 'Software Architecture' },
+            { icon: '📋', description: 'Software System Requirements and Specifications' },
+            { icon: '🧪', description: 'Software Verification and Quality Assurance' },
+            { icon: '🤖', description: 'Software Engineering for Artificial Intelligence' },
+            { icon: '📊', description: 'Project Management in Software Engineering' },
+          ],
+          link: 'https://www.etsmtl.ca/en/study/deuxieme-cycle/maitrise-genie-logiciel',
+          image: etsLogo,
+          date: 'Since 2023',
+          place: 'ETS Montreal, Canada',
+          backgroundImage: etsBg,
+        },
+        {
+          title: "Engineer's Degree - Computer Networks and Multimedia Communication",
+          description: '',
+          descriptionList: [
+            {
+              icon: '👨‍💻',
+              description:
+                'Software (Fundamental Computer Science, Algorithmics and Programming, Software Engineering, Databases)',
+            },
+            {
+              icon: '🖥️',
+              description:
+                'Hardware (Hardware Architecture, Signal Processing, Communications, Mobile Computing)',
+            },
+            {
+              icon: '🌐',
+              description:
+                'Systems and Networks (Networks, Protocols, Middleware, Distributed Systems)',
+            },
+            {
+              icon: '🎥',
+              description:
+                'Multimedia (Human-Computer Interaction, Language Communication, Information Retrieval, Image Synthesis)',
+            },
+          ],
+          link: 'https://polytech.grenoble-inp.fr/medias/fichier/info-anglais-2-_1688983286603-pdf?ID_FICHE=16072&INLINE=FALSE',
+          image: polytechLogo,
+          date: 'Since 2021',
+          place: 'Polytech Grenoble - INP UGA, France',
+          backgroundImage: polytechBg,
+        },
       ],
-      link: 'https://www.etsmtl.ca/en/study/deuxieme-cycle/maitrise-genie-logiciel',
-      image: etsLogo,
-      date: 'Since 2023',
-      place: 'ETS Montreal, Canada',
-      backgroundImage: etsBg,
     },
     {
-      title: "Engineer's Degree - Computer Networks and Multimedia Communication",
-      description: '',
-      descriptionList: [
+      title: 'Associative',
+      data: [
         {
-          icon: '👨‍💻',
-          description:
-            'Software (Fundamental Computer Science, Algorithmics and Programming, Software Engineering, Databases)',
-        },
-        {
-          icon: '🖥️',
-          description:
-            'Hardware (Hardware Architecture, Signal Processing, Communications, Mobile Computing)',
-        },
-        {
-          icon: '🌐',
-          description:
-            'Systems and Networks (Networks, Protocols, Middleware, Distributed Systems)',
-        },
-        {
-          icon: '🎥',
-          description:
-            'Multimedia (Human-Computer Interaction, Language Communication, Information Retrieval, Image Synthesis)',
+          title: 'Active Member - Partnership Manager',
+          description: '',
+          descriptionList: [],
+          link: 'https://polytech.grenoble-inp.fr/fr/vie-etudiante/bde-polytech-grenoble',
+          image: bdeLogo,
+          date: 'From 2022 to 2023',
+          place: 'ETS Montréal, Canada',
+          backgroundImage: polytechBg,
         },
       ],
-      link: 'https://polytech.grenoble-inp.fr/medias/fichier/info-anglais-2-_1688983286603-pdf?ID_FICHE=16072&INLINE=FALSE',
-      image: polytechLogo,
-      date: 'Since 2021',
-      place: 'Polytech Grenoble - INP UGA, France',
-      backgroundImage: polytechBg,
     },
   ],
 

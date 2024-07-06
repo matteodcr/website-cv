@@ -21,6 +21,7 @@ import etsLogo from '@/assets/experience/ets-logo.png';
 import etsBg from '@/assets/experience/ets-bg.png';
 import polytechLogo from '@/assets/experience/polytech-logo.png';
 import polytechBg from '@/assets/experience/polytech-bg.jpg';
+import bdeLogo from '@/assets/experience/bde_logo.jpg';
 import { HomePage } from '@/pages/Home.page';
 import { CurriculumPage } from '@/pages/Curriculum.page';
 import { ProjectPage } from '@/pages/Project.page';
@@ -63,86 +64,117 @@ const content: WebsiteContent = {
     },
   },
   homeLinks: [],
-  experienceData: [
+  curriculumData: [
     {
-      title: 'Conseiller en IA',
-      description: '',
-      link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
-      image: mcnLogo,
-      date: 'Depuis mai 2024',
-      place: 'CEI3A, Ministère de la Cybersécurité et du Numérique du Québec, Montréal, Canada',
-      contract: 'Stage',
-      backgroundImage: mcnBg,
-    },
-    {
-      title: 'Développeur en vision par ordinateur',
-      description:
-        "Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons.",
-      descriptionList: [
-        { icon: '🔎', description: 'Détecter les principales failles d’un système existant' },
-        { icon: '📊', description: 'Présenter et mettre en perspective les solutions envisagées' },
-        { icon: '🧑‍💻', description: 'Programmer un système autonome interagissant avec SSH' },
-        { icon: '📖', description: 'Apprendre de nouvelles techniques de vision par ordinateur' },
+      title: 'Expérience',
+      data: [
         {
-          icon: '🧪',
-          description: 'Prendre part à des expériences afin de délivrer des résultats à un client',
+          title: 'Conseiller en IA',
+          description: '',
+          link: 'https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique',
+          image: mcnLogo,
+          date: 'Depuis mai 2024',
+          place: 'CEI3A, Ministère de la Cybersécurité et du Numérique du Québec, Montréal, Canada',
+          contract: 'Stage',
+          backgroundImage: mcnBg,
         },
-      ],
-      link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
-      image: fitLogo,
-      date: 'De mai à juillet 2023',
-      place: 'ImproLab - FIT CTU, Prague, Tchéquie',
-      contract: 'Stage',
+        {
+          title: 'Développeur en vision par ordinateur',
+          description:
+            "Développement d'un système de caméra autonome assisté par IA pour la détection du chemin des piétons.",
+          descriptionList: [
+            { icon: '🔎', description: 'Détecter les principales failles d’un système existant' },
+            {
+              icon: '📊',
+              description: 'Présenter et mettre en perspective les solutions envisagées',
+            },
+            { icon: '🧑‍💻', description: 'Programmer un système autonome interagissant avec SSH' },
+            {
+              icon: '📖',
+              description: 'Apprendre de nouvelles techniques de vision par ordinateur',
+            },
+            {
+              icon: '🧪',
+              description:
+                'Prendre part à des expériences afin de délivrer des résultats à un client',
+            },
+          ],
+          link: 'https://fit.cvut.cz/en/science-and-research/facilities/laboratories/8357-image-processing-laboratory-improlab',
+          image: fitLogo,
+          date: 'De mai à juillet 2023',
+          place: 'ImproLab - FIT CTU, Prague, Tchéquie',
+          contract: 'Stage',
 
-      backgroundImage: fitBg,
-    },
-  ],
-  formationData: [
-    {
-      title: 'Maitrise en génie logiciel',
-      description: '',
-      descriptionList: [
-        { icon: '🏗️', description: 'Architecture logicielle' },
-        { icon: '📋', description: 'Exigences et spécifications de systèmes logiciels' },
-        { icon: '🧪', description: 'Vérification et assurance qualité de logiciels' },
-        { icon: '🤖', description: "Génie logiciel pour l'Intelligence Artificielle" },
-        { icon: '📊', description: 'Gestion de projet en génie logiciel' },
-      ],
-      link: 'https://www.etsmtl.ca/etude/deuxieme-cycle/maitrise-genie-logiciel',
-      image: etsLogo,
-      date: 'Depuis 2023',
-      place: 'ETS Montréal, Canada',
-      backgroundImage: etsBg,
-    },
-    {
-      title: 'Ingénieur en Informatique',
-      description: '',
-      descriptionList: [
-        {
-          icon: '👨‍💻',
-          description:
-            'Logiciel (Informatique fondamentale, Algorithmique et programmation, Génie logiciel, Bases de données)',
-        },
-        {
-          icon: '🖥️',
-          description:
-            'Matériel (Architecture matérielle, Traitement du signal, Communications, Informatique mobile)',
-        },
-        {
-          icon: '🌐',
-          description: 'Systèmes et réseaux (Réseaux, Protocoles, Intergiciels, Systèmes répartis)',
-        },
-        {
-          icon: '🎥',
-          description:
-            'Multimédia (Interactions homme-machine, Communication langagière, Recherche d’informations, Synthèse d’images)',
+          backgroundImage: fitBg,
         },
       ],
-      link: 'https://polytech.grenoble-inp.fr/fr/formations/informatique-1',
-      image: polytechLogo,
-      date: 'Depuis 2021',
-      place: 'Polytech Grenoble - INP UGA, France',
-      backgroundImage: polytechBg,
+    },
+    {
+      title: 'Formation',
+      data: [
+        {
+          title: 'Maitrise en génie logiciel',
+          description: '',
+          descriptionList: [
+            { icon: '🏗️', description: 'Architecture logicielle' },
+            { icon: '📋', description: 'Exigences et spécifications de systèmes logiciels' },
+            { icon: '🧪', description: 'Vérification et assurance qualité de logiciels' },
+            { icon: '🤖', description: "Génie logiciel pour l'Intelligence Artificielle" },
+            { icon: '📊', description: 'Gestion de projet en génie logiciel' },
+          ],
+          link: 'https://www.etsmtl.ca/etude/deuxieme-cycle/maitrise-genie-logiciel',
+          image: etsLogo,
+          date: 'Depuis 2023',
+          place: 'ETS Montréal, Canada',
+          backgroundImage: etsBg,
+        },
+        {
+          title: 'Ingénieur en Informatique',
+          description: '',
+          descriptionList: [
+            {
+              icon: '👨‍💻',
+              description:
+                'Logiciel (Informatique fondamentale, Algorithmique et programmation, Génie logiciel, Bases de données)',
+            },
+            {
+              icon: '🖥️',
+              description:
+                'Matériel (Architecture matérielle, Traitement du signal, Communications, Informatique mobile)',
+            },
+            {
+              icon: '🌐',
+              description:
+                'Systèmes et réseaux (Réseaux, Protocoles, Intergiciels, Systèmes répartis)',
+            },
+            {
+              icon: '🎥',
+              description:
+                'Multimédia (Interactions homme-machine, Communication langagière, Recherche d’informations, Synthèse d’images)',
+            },
+          ],
+          link: 'https://polytech.grenoble-inp.fr/fr/formations/informatique-1',
+          image: polytechLogo,
+          date: 'Depuis 2021',
+          place: 'Polytech Grenoble - INP UGA, France',
+          backgroundImage: polytechBg,
+        },
+      ],
+    },
+    {
+      title: 'Associatif',
+      data: [
+        {
+          title: 'Membre Actif - Responsable des Partenariats',
+          description: '',
+          descriptionList: [],
+          link: 'https://polytech.grenoble-inp.fr/fr/vie-etudiante/bde-polytech-grenoble',
+          image: bdeLogo,
+          date: 'De  2022 à  2023',
+          place: 'ETS Montréal, Canada',
+          backgroundImage: polytechBg,
+        },
+      ],
     },
   ],
   projectData: [

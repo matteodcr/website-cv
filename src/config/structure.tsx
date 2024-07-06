@@ -41,6 +41,10 @@ export interface CurriculumProps {
   link: string;
   contract?: string;
 }
+export interface CurriculumSectionProps {
+  title: string;
+  data: CurriculumProps[];
+}
 export interface ProjectProps {
   name: string;
   font?: string;
@@ -54,8 +58,7 @@ export interface ProjectProps {
 interface WebsiteContent {
   routes: { [key: string]: Route };
   homeLinks: HomeCardProps[];
-  formationData: CurriculumProps[];
-  experienceData: CurriculumProps[];
+  curriculumData: CurriculumSectionProps[];
   projectData: ProjectProps[];
   socialLinksData: SocialLinkProps[];
 

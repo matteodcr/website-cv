@@ -112,17 +112,17 @@ export default function CurriculumCard({
             </List>
           )}
           <Flex>
-            {!isMobile && (
-              <Button
-                onClick={goToLink}
-                rightSection={<IconOutbound size={16} />}
-                variant="light"
-                color="rgba(0, 0, 0, 1)"
-                mt={10}
-              >
-                En savoir plus
-              </Button>
-            )}
+            <Button
+              onClick={goToLink}
+              rightSection={<IconOutbound size={16} />}
+              variant="light"
+              fullWidth={!!isMobile}
+              size={isMobile ? 'lg' : 'sm'}
+              color="rgba(0, 0, 0, 1)"
+              mt={10}
+            >
+              En savoir plus
+            </Button>
           </Flex>
         </Accordion.Panel>
       </Accordion.Item>

@@ -1,5 +1,4 @@
 export function getLanguage(): string {
-  console.log('LOADED', localStorage.getItem('language'));
   if (localStorage.getItem('language')) {
     return localStorage.getItem('language') as string;
   }

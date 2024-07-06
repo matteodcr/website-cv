@@ -14,10 +14,8 @@ export default function Header() {
 
   const onClick = () => {
     const newLanguage = language === 'en' ? 'fr' : 'en';
-    console.log('before', language);
     setLanguage(newLanguage);
     localStorage.setItem('language', newLanguage);
-    console.log('after', newLanguage);
     window.location.reload();
   };
 
@@ -30,8 +28,8 @@ export default function Header() {
         </ActionIcon>
       </Group>
       {!isMobile && <CustomFloatingIndicator />}
-      <ActionIcon variant="transparent" mx={15} onClick={onClick}>
-        <Text fz={25}>{getFlag()}</Text>
+      <ActionIcon variant="transparent" size="xl" mx={15} onClick={onClick}>
+        <Text fz={40}>{getFlag()}</Text>
       </ActionIcon>
     </Group>
   );
