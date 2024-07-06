@@ -9,7 +9,7 @@ function TechnologiesBadge({ name, icon, backgroundColor, textColor }: Technolog
     <Badge size="lg" color={backgroundColor}>
       <Flex
         mih={50}
-        gap="md"
+        gap="xs"
         justify="center"
         align="center"
         direction="row"
@@ -39,9 +39,9 @@ export default function ProjectCard({
     window.open(link, '_blank', 'noopener noreferrer');
   }
 
-  const backgroundStyle = image
-    ? { backgroundImage: `url(${image})`, backdropFilter: 'blur(2px) saturate(40%)' }
-    : { backgroundColor: backgroundColor || 'transparent' };
+  // const backgroundStyle = image
+  //   ? { backgroundImage: `url(${image})`, backdropFilter: 'blur(2px) saturate(40%)' }
+  //   : { backgroundColor: backgroundColor || 'transparent' };
 
   return (
     <Card
@@ -50,10 +50,11 @@ export default function ProjectCard({
       shadow="sm"
       padding="lg"
       radius="md"
+      p={10}
       withBorder
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer', borderColor: backgroundColor, borderWidth: 2 }}
     >
-      <Card.Section component="a" style={{ ...backgroundStyle, height: 160 }}>
+      <Card.Section component="a" style={{ height: 160 }}>
         <Flex justify="center" align="center" h="100%" wrap="nowrap">
           <Stack justify="center" gap="0">
             <Flex mih={50} gap="md" justify="center" align="center" direction="row" wrap="wrap">
@@ -70,7 +71,7 @@ export default function ProjectCard({
             <Flex
               mih={50}
               pt={0}
-              gap="md"
+              gap="xs"
               justify="center"
               align="center"
               direction="row"
@@ -84,11 +85,9 @@ export default function ProjectCard({
         </Flex>
       </Card.Section>
 
-      <Group justify="space-between" mt="md" mb="xs"></Group>
+      <Group justify="space-between" mb="xs"></Group>
 
-      <Text size="sm" c="dimmed">
-        {description}
-      </Text>
+      <Text size="md">{description}</Text>
     </Card>
   );
 }
